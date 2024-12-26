@@ -1,0 +1,817 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>shell语法 | xujiaojiao</title><meta name="keywords" content="shell"><meta name="author" content="徐娇娇"><meta name="copyright" content="徐娇娇"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="shell语法"><meta name="application-name" content="shell语法"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="shell语法"><meta property="og:url" content="http://example.com/2024/12/26/shell%E8%AF%AD%E6%B3%95/index.html"><meta property="og:site_name" content="xujiaojiao"><meta property="og:description" content="shell语法概论终端可以看做逐条执行的shell脚本，Linux默认使用bash，脚本文件第一行必须为 12#! &amp;#x2F;bin&amp;#x2F;bash  可通过两种方式执行shell脚本  解释器执行：bash xxx.sh 作为可执行文件执行 添加执行权限chmod +x xxx.sh 执行.&amp;#x2F;xxx.sh"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://haowallpaper.com/link/common/file/getCroppingImg/15565330088759616"><meta property="article:author" content="徐娇娇"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://haowallpaper.com/link/common/file/getCroppingImg/15565330088759616"><meta name="description" content="shell语法概论终端可以看做逐条执行的shell脚本，Linux默认使用bash，脚本文件第一行必须为 12#! &amp;#x2F;bin&amp;#x2F;bash  可通过两种方式执行shell脚本  解释器执行：bash xxx.sh 作为可执行文件执行 添加执行权限chmod +x xxx.sh 执行.&amp;#x2F;xxx.sh"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2024/12/26/shell%E8%AF%AD%E6%B3%95/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🔍 分享与热心帮助","🔨 设计开发一条龙"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    simplehomepage: false,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 徐娇娇","link":"链接: ","source":"来源: xujiaojiao","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'xujiaojiao',
+  title: 'shell语法',
+  postAI: '',
+  pageFillDescription: ' shell语法, 概论, 注释, 变量, 默认变量, 3.4 数组, expr命令, 字符串表达式, 整数表达式, 逻辑表达式, read命令, echo命令, printf命令, test命令与判断符号[], test用法, 文件类型判断, 文件权限判断, 整数间比较, 字符串比较, 多重条件判定, 判断符号[], 判断语句, if语句, case语句, 循环语句, for语句, while语句, until语句, 循环控制, 函数, exit命令, 文件重定向, 引入外部脚本语法概论终端可以看做逐条执行的脚本默认使用脚本文件第一行必须为可通过两种方式执行脚本解释器执行作为可执行文件执行添加执行权限执行注释单行注释类似用注释多行注释其中可替换成任意字符串例如变量定义变量定义不需要而且两边不能有空格字符串可用单引号双引号或不用引号描述例如下边三种变量声明都是正确的引用变量需要用可用限定变量名边界实现字符串与变量混合表示输出只读变量声明前加上或删除变量用删除此时变量为空串输出空串和一个换行符变量类型根据使用范围可分为全局变量和局部变量全局变量又称环境变量其它子进程其它终端可访问可用以下两种方式声明局部变量又称自定义变量只有当前进程能访问可通过把全局变量转成局部变量单引号字符串与双引号字符串的区别单引号的内容原样输出不支持变量引用嵌套而双引号的内容中可以嵌套变量引用不加引号与双引号效果一致输出输出获取字符串的长度输出提取子串第个数为起始地址从开始第个数为长度输出默认变量表示文件路径例如等依次表示脚本的第个参数第个参数参数说明参数个数等价于等价于当前进程上一条命令的退出状态例如表示正常退出其它为异常退出返回的标准输出可嵌套返回的标准输出不可嵌套数组只支持一维数组但数组元素类型可以不同而且不需要指名数组大小下标从开始数组用小括号表示元素用空格隔开整个定义逐个定义用读取数组元素可用或表示整个数组输出索引为的元素输出所有元素输出所有元素读取数组长度有如下两种方式返回的都是数组实际长度命令可用于表达式求值格式为表达式表达式用空格隔开每一项个别符号需要用转义例如乘号如果表达式包含空格以及其它特殊字符需要用引号括起表达式同时在和输出结果如果表达式是逻辑表达式且为真时则返回返回如果表达式是非逻辑表达式则一律返回字符串表达式可用求的长度可用求中任意单个字符首次在中出现的位置下标从开始可用求从起长度为的子串整数表达式加减乘除取余括号注意乘号和括号需要用反斜杠转义输出逻辑表达式如果左边参数非空且非则返回左边参数否则如果右边参数非空且非返回右边参数都不满足返回如果左边参数和右边参数非空且非则返回左边参数否则返回和都具有短路特性如果计算左边参数足以确定返回值则不会计算右边参数都与一致除了也表示相等关系即与同义命令类似后边接变量名例如有两个参数接提示信息接超时时间单位为秒超过时间则忽略该命令命令主要用于输出字符串字符串可不加引号表示也可加单引号表示原生字符串或加双引号实现嵌套变量的字符串双引号需要用转义单引号不需要参数可开启转义从而能在字符串使用转义字符额外多输出一个换行符若想取消默认输出的换行符可用重定向显示执行结果命令类似的其格式为命令与判断符号用法命令常用于判断文件类型以及比较变量它的返回结果是需要用读取输入可查看的用法中表示真其它为假逻辑运算符和都具有短路原则只是这是真的逻辑表达式返回逻辑值和而不像和只执行不返回逻辑表达式为真因此为文件类型判断常用参数有文件是否存在是否为文件是否为目录为了提高代码可读性常常这样编写代码判断文件是否存在文件权限判断常用参数有文件是否可读文件是否可写文件是否可执行文件是否为空文件整数间比较类似命令的比较符号有字符串比较常用参数有字符串是否为空如果为空返回字符串是否非空如果非空返回判断字符串是否相同判断字符串是否不同多重条件判定常用参数有与或非文件不可执行时返回判断符号用法几乎与一样可看做简化版的常用于语句中注意中括号前后的空格变量和常量尽量用双引号括起与上一条语句等价用双引号括起判断语句语句中的语句类似中的语句块其语法格式如下其中可用逻辑表达式或表达式例如表示变量是否等于满足则执行后边的语句语句中的语句类似中语句块其语法格式如下例子其中类似循环语句语句遍历指定值遍历数组把的作为数组进行遍历可用或表示数组也可用表示数组类似中的语句块只是需要用双括号括起此时允许括号内的号两侧用空格隔开通常不允许例如语句中的与类似语法结构如下例子若要终止读取可按或直接结束程序语句语句与相反当为假时才进入循环为真是结束循环其语法结构如下例子循环控制类似也有和语句功能一样只是中的语句不能用于语句块中如果遇到死循环可用找到进程然后用命令结束进程函数中的函数类似中的函数但不同在中只能返回之间的若想获取返回值可用输出到中然后再通过获取其结果可通过获取函数语法结构其中关键字可省略当不写时函数默认返回函数参数表示函数的第一个输入参数以此类推但不表示函数名而是文件名局部变量用关键字声明范围为函数体内命令用于结束当前进程并返回一个退出状态状态值为之间的整数其中表示成功其余表示失败文件重定向每个进程默认打开个文件描述符标准输入从命令行读取数据文件描述符为标准输出向命令行输出数据文件描述符为标准错误输出向命令行输出错误文件描述符为重定向语法命令说明将重定向到中即把的结果输出到中会覆盖中的内容将重定向到中即从中读入数据与类似只是是以追加的方式输出到中不会覆盖的原始内容将文件描述符重定向到中将文件描述符以追加的方式重定向到中例子从读取数据结果输出到中引入外部脚本类似引入头文件有如下两种方式引用注意空格',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-26 13:49:17',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://s1.aigei.com/src/img/gif/03/03c121e624254470846ed8af309ad291.gif?imageMogr2/auto-orient/thumbnail/!282x272r/gravity/Center/crop/282x272/quality/85/%7CimageView2/2/w/282&amp;e=1735488000&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:8ff1Zbbf_c1U_QWNIcPEFx06OJM="/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://userxjj.github.io/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.xujiaojiaojiao.cn/" title="xjjapp"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="xjjapp"/><span class="back-menu-item-text">xjjapp</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">xujiaojiao</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 互动</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/22/67680d24634a2.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://www.helloimg.com/i/2024/12/22/67680d24634a2.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/22/67680d250f28e.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://www.helloimg.com/i/2024/12/22/67680d250f28e.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Linux%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/" style="font-size: 1.05rem;">Linux常用文件命令<sup>1</sup></a><a href="/tags/git/" style="font-size: 1.05rem;">git<sup>1</sup></a><a href="/tags/heapSort/" style="font-size: 1.05rem;">heapSort<sup>1</sup></a><a href="/tags/mergeSort/" style="font-size: 1.05rem;">mergeSort<sup>1</sup></a><a href="/tags/quickSort/" style="font-size: 1.05rem;">quickSort<sup>1</sup></a><a href="/tags/shell/" style="font-size: 1.05rem;">shell<sup>1</sup></a><a href="/tags/shellSort/" style="font-size: 1.05rem;">shellSort<sup>1</sup></a><a href="/tags/vim%E5%92%8Ctmux/" style="font-size: 1.05rem;">vim和tmux<sup>1</sup></a><a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 1.05rem;">嵌入式<sup>1</sup></a><a href="/tags/%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 1.05rem;">管道、环境变量及其常用命令<sup>1</sup></a><a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.05rem;">设计模式<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">11</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">转载</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/" itemprop="url">Linux</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/shell/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>shell</span></a></span></div></div><h1 class="post-title" itemprop="name headline">shell语法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-12-26T05:48:38.000Z" title="发表于 2024-12-26 13:48:38">2024-12-26</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-12-26T05:49:17.785Z" title="更新于 2024-12-26 13:49:17">2024-12-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">2.7k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="shell语法"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为武汉"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>武汉</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://haowallpaper.com/link/common/file/getCroppingImg/15691097259675968"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.xujiaojiao.xyz"><header><a class="post-meta-categories" href="/categories/Linux/" itemprop="url">Linux</a><a href="/tags/shell/" tabindex="-1" itemprop="url">shell</a><h1 id="CrawlerTitle" itemprop="name headline">shell语法</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">xujiaojiao</span><time itemprop="dateCreated datePublished" datetime="2024-12-26T05:48:38.000Z" title="发表于 2024-12-26 13:48:38">2024-12-26</time><time itemprop="dateCreated datePublished" datetime="2024-12-26T05:49:17.785Z" title="更新于 2024-12-26 13:49:17">2024-12-26</time></header><h2 id="shell语法"><a href="#shell语法" class="headerlink" title=" shell语法"></a> shell语法</h2><h3 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h3><p>终端可以看做逐条执行的shell脚本，Linux默认使用bash，脚本文件第一行必须为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#! /bin/bash</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可通过两种方式执行shell脚本</p>
+<ul>
+<li>解释器执行：<code>bash xxx.sh</code></li>
+<li>作为可执行文件执行<ul>
+<li>添加执行权限<code>chmod +x xxx.sh</code></li>
+<li>执行<code>./xxx.sh</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><strong>单行注释：</strong>类似python，用<code>#</code>注释</p>
+<p><strong>多行注释：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:&lt;&lt;EOF</span><br><span class="line">...</span><br><span class="line">EOF</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其中<code>EOF</code>可替换成任意字符串，例如<code>abc</code></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p><strong>定义变量</strong></p>
+<p>定义不需要<code>$</code>，而且<code>=</code>两边不能有空格。字符串可用单引号、双引号或不用引号描述，例如下边三种变量声明都是正确的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name1=&#x27;abc&#x27;</span><br><span class="line">name2=&quot;abc&quot;</span><br><span class="line">name3=abc</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>引用变量</strong></p>
+<p>需要用<code>$</code>，可用<code>&#123;&#125;</code>限定变量名边界，实现字符串与变量混合表示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;name1&#125;defg  # 输出abcdefg</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>只读变量</strong></p>
+<p>声明前加上<code>readonly</code>或<code>declare -r</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">readonly name1</span><br><span class="line">declare -r name2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>删除变量</strong></p>
+<p>用<code>unset</code>删除，此时变量为空串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unset name</span><br><span class="line">echo name  # 输出空串和一个换行符</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>变量类型</strong></p>
+<p>根据使用范围，可分为全局变量和局部变量。</p>
+<p>全局变量又称环境变量，其它子进程（其它bash终端）可访问，可用以下两种方式声明：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export name</span><br><span class="line">declare -x name</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>局部变量又称自定义变量，只有当前进程能访问，可通过<code>declare +x</code>把全局变量转成局部变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">declare +x name</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>单引号字符串与双引号字符串的区别</strong></p>
+<p>单引号的内容原样输出，不支持变量引用嵌套<code>$name</code>；而双引号的内容中可以嵌套变量引用，不加引号与双引号效果一致。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name=abc</span><br><span class="line">echo &#x27;$name defg&#x27;  # 输出$name defg</span><br><span class="line">echo &quot;$name defg&quot;  # 输出abc defg</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>获取字符串的长度</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name=&quot;abc&quot;</span><br><span class="line">echo $&#123;#name&#125;  # 输出3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>提取子串</strong>F’x</p>
+<p>第1个数为起始地址（从0开始），第2个数为长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name=&quot;abcdefg&quot;</span><br><span class="line">echo $&#123;name:0:5&#125;  # 输出abcde</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="默认变量"><a href="#默认变量" class="headerlink" title="默认变量"></a>默认变量</h3><p><code>$0</code>表示文件路径，例如<code>./xxx.sh</code>，<code>$1</code>、<code>$2</code>等依次表示脚本的第1个参数、第2个参数。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$#</code></td>
+<td>参数个数</td>
+</tr>
+<tr>
+<td><code>$*</code></td>
+<td>等价于<code>&quot;$1 $2 $3 ...&quot;</code></td>
+</tr>
+<tr>
+<td><code>$@</code></td>
+<td>等价于<code>&quot;$1&quot; &quot;$2&quot; &quot;$3&quot; ...&quot;</code></td>
+</tr>
+<tr>
+<td><code>$$</code></td>
+<td>当前进程ID</td>
+</tr>
+<tr>
+<td><code>$?</code></td>
+<td>上一条命令的退出状态，例如0表示正常退出，其它为异常退出</td>
+</tr>
+<tr>
+<td><code>$(command)</code></td>
+<td>返回<code>command</code>的标准输出stdout，可嵌套</td>
+</tr>
+<tr>
+<td>`command`</td>
+<td>返回<code>command</code>的标准输出stdout，不可嵌套</td>
+</tr>
+</tbody></table>
+<h3 id="3-4-数组"><a href="#3-4-数组" class="headerlink" title="3.4 数组"></a>3.4 数组</h3><p>只支持一维数组，但数组元素类型可以不同，而且不需要指名数组大小，下标从0开始。数组用小括号<code>()</code>表示，元素用空格隔开</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array=(1 abc &#x27;defg&#x27;)  # 整个定义</span><br><span class="line">array[3] = &quot;hijk&quot;  # 逐个定义</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>用<code>$</code>读取数组元素，可用<code>@</code>或<code>*</code>表示整个数组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo $(array[0])  # 输出索引为0的元素</span><br><span class="line">echo $(array[@])  # 输出所有元素</span><br><span class="line">echo $(array[*])  # 输出所有元素</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>读取数组长度，有如下两种方式，返回的都是数组实际长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo $(#array[@])</span><br><span class="line">echo $(#array[*])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="expr命令"><a href="#expr命令" class="headerlink" title="expr命令"></a>expr命令</h3><p>可用于表达式求值，格式为<code>echo 表达式</code>。表达式用空格隔开每一项，个别符号需要用<code>\</code>转义，例如乘号<code>*</code>。如果表达式包含空格以及其它特殊字符，需要用引号括起。</p>
+<p>表达式同时在<code>stdout</code>和<code>exit code</code>输出结果。如果表达式是逻辑表达式，且为真时，则<code>stdout</code>返回<code>1</code>，<code>exit code</code>返回<code>0</code>。如果表达式是非逻辑表达式，则一律返回<code>0</code>。</p>
+<h4 id="字符串表达式"><a href="#字符串表达式" class="headerlink" title="字符串表达式"></a>字符串表达式</h4><p>可用<code>length str</code>求<code>str</code>的长度</p>
+<p>可用<code>index string charset</code>求<code>charset</code>中任意单个字符首次在<code>string</code>中出现的位置，下标从<strong>1</strong>开始</p>
+<p>可用<code>substr string position length</code>求<code>string</code>从<code>position</code>起，长度为<code>length</code>的子串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str=&quot;HelloWorld&quot;</span><br><span class="line">echo `expr length &quot;$str&quot;`</span><br><span class="line">echo `expr index &quot;$str&quot; abc`</span><br><span class="line">echo `expr substr &quot;$str&quot; 2 3`</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="整数表达式"><a href="#整数表达式" class="headerlink" title="整数表达式"></a>整数表达式</h4><p>加<code>+</code>减<code>-</code>乘<code>\*</code>除<code>/</code>取余<code>%</code>括号<code>\(</code> <code>\)</code>，注意乘号和括号需要用反斜杠<code>\</code>转义。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo `expr \( $a + $b \) \* $c`  # 输出(a+b)*c</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="逻辑表达式"><a href="#逻辑表达式" class="headerlink" title="逻辑表达式"></a>逻辑表达式</h4><p><code>|</code>：如果左边参数非空且非0，则返回左边参数；否则如果右边参数非空且非0，返回右边参数；都不满足返回0。</p>
+<p><code>&amp;</code>：如果左边参数和右边参数非空且非0，则返回左边参数；否则返回0。</p>
+<p><code>|</code>和<code>&amp;</code>都具有短路特性，如果计算左边参数足以确定返回值，则不会计算右边参数。</p>
+<p><code>&lt;</code>、<code>&lt;=</code>、<code>&gt;</code>、<code>&gt;=</code>、<code>==</code>、<code>!=</code>都与python一致，除了<code>=</code>也表示相等关系，即与<code>==</code>同义</p>
+<h3 id="read命令"><a href="#read命令" class="headerlink" title="read命令"></a>read命令</h3><p><code>read</code>类似<code>cin</code>，后边接变量名，例如<code>read name</code></p>
+<p><code>read</code>有两个参数<code>-p</code>，接提示信息；<code>-t</code>，接超时时间，单位为秒，超过时间则忽略该命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read -p &quot;What&#x27;s your name?&quot; -t 30 name</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="echo命令"><a href="#echo命令" class="headerlink" title="echo命令"></a>echo命令</h3><p><code>echo</code>主要用于输出字符串，字符串可不加引号表示，也可加单引号表示原生字符串，或加双引号实现嵌套变量的字符串</p>
+<p>双引号需要用<code>\</code>转义，单引号不需要</p>
+<p>参数<code>-e</code>可开启转义，从而能在字符串使用转义字符<code>\n</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;Hi\n&quot;  # 额外多输出一个换行符</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>若想取消<code>echo</code>默认输出的换行符，可用<code>\c</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;Hi\c&quot;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>重定向</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Hello world&quot; &gt; output.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>显示执行结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo `ls`</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="printf命令"><a href="#printf命令" class="headerlink" title="printf命令"></a>printf命令</h3><p>类似<code>C++</code>的<code>printf</code>，其格式为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">printf format-string [arguments...]</span><br><span class="line">printf &quot;%10d.\n&quot; 100</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="test命令与判断符号"><a href="#test命令与判断符号" class="headerlink" title="test命令与判断符号[]"></a>test命令与判断符号[]</h3><h4 id="test用法"><a href="#test用法" class="headerlink" title="test用法"></a>test用法</h4><p><code>test</code>命令常用于判断文件类型，以及比较变量，它的返回结果是<code>exit code</code>，需要用<code>$?</code>读取。输入<code>man test</code>可查看<code>test</code>的用法。</p>
+<p><code>exit code</code>中，<code>0</code>表示真，其它为假。</p>
+<p>逻辑运算符<code>&amp;&amp;</code>和<code>||</code>都具有短路原则，只是这是真的逻辑表达式，返回逻辑值<code>1</code>和<code>0</code>，而不像<code>&amp;</code>和<code>|</code>只执行，不返回<code>exit code</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test 2 -lt 3</span><br><span class="line">echo $?  # 逻辑表达式为真，因此exit code为0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="文件类型判断"><a href="#文件类型判断" class="headerlink" title="文件类型判断"></a>文件类型判断</h4><p>常用参数有</p>
+<ul>
+<li><code>-e</code>：文件是否存在</li>
+<li><code>-f</code>：是否为文件</li>
+<li><code>-d</code>：是否为目录</li>
+</ul>
+<p>为了提高代码可读性，常常这样编写代码判断文件是否存在：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test -e filename &amp;&amp; echo &quot;Exist&quot; || echo &quot;Not exist&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="文件权限判断"><a href="#文件权限判断" class="headerlink" title="文件权限判断"></a>文件权限判断</h4><p>常用参数有</p>
+<ul>
+<li><code>-r</code>：文件是否可读</li>
+<li><code>-w</code>：文件是否可写</li>
+<li><code>-x</code>：文件是否可执行</li>
+<li><code>-s</code>：文件是否为空文件</li>
+</ul>
+<h4 id="整数间比较"><a href="#整数间比较" class="headerlink" title="整数间比较"></a>整数间比较</h4><p>类似Latex，<code>test</code>命令的比较符号有<code>-eq</code>、<code>-ne</code>、<code>-gt</code>、<code>-lt</code>、<code>-ge</code>、<code>-le</code></p>
+<h4 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h4><p>常用参数有</p>
+<ul>
+<li><code>-z</code>：字符串是否为空，如果为空返回<code>True</code></li>
+<li><code>-n</code>：字符串是否非空，如果非空返回<code>True</code></li>
+<li><code>==</code>：判断字符串是否相同</li>
+<li><code>!=</code>：判断字符串是否不同</li>
+</ul>
+<h4 id="多重条件判定"><a href="#多重条件判定" class="headerlink" title="多重条件判定"></a>多重条件判定</h4><p>常用参数有：与<code>-a</code>、或<code>-o</code>、非<code>!</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test ! -x file  # 文件不可执行时返回True</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="判断符号"><a href="#判断符号" class="headerlink" title="判断符号[]"></a>判断符号[]</h4><p><code>[]</code>用法几乎与<code>test</code>一样，可看做简化版的<code>test</code>，常用于<code>if</code>语句中。注意中括号前后的空格，变量和常量尽量用双引号括起。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">test 2 -lt 3</span><br><span class="line">[ 2 -lt 3 ]  # 与上一条语句等价</span><br><span class="line"></span><br><span class="line">[ &quot;$name&quot; == &quot;abc&quot; ]  # 用双引号括起</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h3><h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><p><code>bash</code>中的<code>if</code>语句类似C++中的<code>if</code>语句块，其语法格式如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if condition</span><br><span class="line">then</span><br><span class="line">    statement</span><br><span class="line">elif condition</span><br><span class="line">then</span><br><span class="line">    statement</span><br><span class="line">else</span><br><span class="line">    statement</span><br><span class="line">fi</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其中<code>condition</code>可用<code>expr</code>逻辑表达式或<code>test</code>表达式，例如<code>[ &quot;$a&quot; -eq 1 ]</code>表示变量a是否等于1，满足则执行<code>then</code>后边的语句。</p>
+<h4 id="case语句"><a href="#case语句" class="headerlink" title="case语句"></a>case语句</h4><p><code>bash</code>中的<code>case</code>语句类似C++中<code>switch</code>语句块，其语法格式如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">case $Name in</span><br><span class="line">    value1)</span><br><span class="line">        statement</span><br><span class="line">        ;;</span><br><span class="line">    value2)</span><br><span class="line">        statement</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        statement</span><br><span class="line">        ;;</span><br><span class="line">esac</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>例子</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">case $a in</span><br><span class="line">    1)</span><br><span class="line">        echo &quot;a = 1&quot;</span><br><span class="line">        ;;</span><br><span class="line">    2)</span><br><span class="line">        echo &quot;a = 2&quot;</span><br><span class="line">        ;;</span><br><span class="line">    *)</span><br><span class="line">        echo &quot;a = other&quot;</span><br><span class="line">        ;;</span><br><span class="line">esac</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其中<code>;;</code>类似<code>break</code></p>
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><h4 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h4><p><strong>（1）</strong><code>for...in</code></p>
+<p><strong>遍历指定值</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for var in val1 val2 val3</span><br><span class="line">do</span><br><span class="line">    statement</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>遍历数组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for var in `ls`</span><br><span class="line">do</span><br><span class="line">    statement</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>把<code>ls</code>的<code>stdout</code>作为数组进行遍历</p>
+<p>可用<code>$(seq 1 10)</code>或<code>&#123;1..10&#125;</code>表示数组<code>1 2 ... 10</code>，也可用<code>&#123;a..z&#125;</code>表示数组<code>a b ... z</code></p>
+<p><strong>（2）</strong><code>for((expression; condition; expression))</code></p>
+<p>类似<code>C++</code>中的<code>for</code>语句块，只是需要用双括号括起，此时允许括号内的<code>=</code>号两侧用空格隔开（通常不允许）</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for ((i = 1; i &lt;= 10; i++))</span><br><span class="line">do</span><br><span class="line">    echo $i</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h4><p><code>bash</code>中的<code>while</code>与<code>C++</code>类似，语法结构如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while condition</span><br><span class="line">do</span><br><span class="line">    statement</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while read name</span><br><span class="line">do</span><br><span class="line">    echo $name</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>若要终止读取，可按<code>ctrl</code>+<code>d</code>，或直接结束程序<code>ctrl</code>+<code>c</code>。</p>
+<h4 id="until语句"><a href="#until语句" class="headerlink" title="until语句"></a>until语句</h4><p><code>until</code>语句与<code>while</code>相反，当<code>condition</code>为假时才进入循环，为真是结束循环，其语法结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">until condition</span><br><span class="line">do</span><br><span class="line">    statement</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">until [ &quot;$(word)&quot; == &quot;yes&quot; ] || [ &quot;$(word)&quot; == &quot;YES&quot; ]</span><br><span class="line">do</span><br><span class="line">    read -p &quot;Please input yes/YES to stop this program: &quot; word</span><br><span class="line">done</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h4><p>类似<code>C++</code>，<code>bash</code>也有<code>continue</code>和<code>break</code>语句，功能一样，只是<code>bash</code>中的<code>break</code>语句不能用于<code>case</code>语句块中。</p>
+<p>如果遇到死循环，可用<code>top</code>找到进程PID，然后用命令<code>kill -9 PID</code>结束进程。</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p><code>bash</code>中的函数类似<code>C++</code>中的函数，但<code>return</code>不同。在<code>bash</code>中，<code>return</code>只能返回<code>0</code>~&#96;255<code>之间的</code>exit code<code>，若想获取返回值，可用</code>echo<code>输出到</code>stdout<code>中，然后再通过</code>$(function_name)<code>获取其</code>stdout<code>结果。</code>exit code<code>可通过</code>$?&#96;获取。</p>
+<p><strong>函数语法结构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[function] func_name() &#123;</span><br><span class="line">    statement</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其中function关键字可省略。</p>
+<p>当不写<code>return</code>时，函数默认返回<code>0</code></p>
+<p><strong>函数参数</strong></p>
+<p><code>$1</code>表示函数的第一个输入参数，以此类推。但<code>$0</code>不表示函数名，而是文件名。</p>
+<p><strong>局部变量</strong></p>
+<p>用<code>local</code>关键字声明，范围为函数体内。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func() &#123;</span><br><span class="line">    local name=abc</span><br><span class="line">    echo $name</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="exit命令"><a href="#exit命令" class="headerlink" title="exit命令"></a>exit命令</h3><p><code>exit</code>用于结束<strong>当前进程</strong>，并返回一个退出状态，状态值为0~255之间的整数，其中0表示成功，其余表示失败。</p>
+<h3 id="文件重定向"><a href="#文件重定向" class="headerlink" title="文件重定向"></a>文件重定向</h3><p>每个进程默认打开3个文件描述符</p>
+<ul>
+<li>标准输入<code>stdin</code>：从命令行读取数据，文件描述符为<code>0</code></li>
+<li>标准输出<code>stdout</code>：向命令行输出数据，文件描述符为<code>1</code></li>
+<li>标准错误输出<code>stderr</code>：向命令行输出错误，文件描述符为<code>2</code></li>
+</ul>
+<p><strong>重定向语法</strong></p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>command &gt; file</code></td>
+<td>将<code>stdout</code>重定向到<code>file</code>中，即把<code>command</code>的结果输出到<code>file</code>中，会覆盖<code>file</code>中的内容</td>
+</tr>
+<tr>
+<td><code>command &lt; file</code></td>
+<td>将<code>stdin</code>重定向到<code>file</code>中，即<code>command</code>从<code>file</code>中读入数据</td>
+</tr>
+<tr>
+<td><code>command &gt;&gt; file</code></td>
+<td>与<code>&gt;</code>类似，只是是以追加的方式输出到<code>file</code>中，不会覆盖<code>file</code>的原始内容</td>
+</tr>
+<tr>
+<td><code>command n&gt; file</code></td>
+<td>将文件描述符<code>n</code>重定向到<code>file</code>中</td>
+</tr>
+<tr>
+<td><code>command n&gt;&gt; file</code></td>
+<td>将文件描述符<code>n</code>以追加的方式重定向到<code>file</code>中</td>
+</tr>
+</tbody></table>
+<p>例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./test.sh &lt; input.txt &gt; output.txt  # test.sh从input.txt读取数据，结果输出到output.txt中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="引入外部脚本"><a href="#引入外部脚本" class="headerlink" title="引入外部脚本"></a>引入外部脚本</h3><p>类似<code>C++</code>引入头文件，有如下两种方式引用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">. filename  # 注意空格</span><br><span class="line">source filename</span><br><span class="line"></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src="https://pic.qqans.com/up/2024-4/2024429840393979.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src="https://pic.qqans.com/up/2024-4/2024429840393979.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">xujiaojiao</div><div class="post-copyright__author_desc">生活明朗，万物可爱</div></div><div class="post-copyright__post__info"><a class="post-copyright__reprint" title="该文章为转载文章，注意版权协议" target="_blank" rel="noopener" href="https://www.xujiaojiao.xyz">转载</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.xujiaojiao.xyz')">shell语法</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/22/67680d24634a2.jpg" target="_blank"><img class="post-qr-code-img" src="https://www.helloimg.com/i/2024/12/22/67680d24634a2.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/22/67680d250f28e.jpg" target="_blank"><img class="post-qr-code-img" src="https://www.helloimg.com/i/2024/12/22/67680d250f28e.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.xujiaojiao.xyz"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=shell语法&amp;url=https://www.xujiaojiao.xyz&amp;pic=https://haowallpaper.com/link/common/file/getCroppingImg/15691097259675968" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">此文章版权归xujiaojiao所有，如有转载，请注明来自原作者</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/shell/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>shell<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://haowallpaper.com/link/common/file/getCroppingImg/15565330088759616" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/12/26/vim%E5%92%8Ctmux/"><img class="prev-cover" src="https://haowallpaper.com/link/common/file/getCroppingImg/15565330088759616" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">vim和tmux</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src="https://pic.qqans.com/up/2024-4/2024429840393979.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> shell语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%AE%BA"><span class="toc-number">1.1.</span> <span class="toc-text">概论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">1.2.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.3.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">默认变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E6%95%B0%E7%BB%84"><span class="toc-number">1.5.</span> <span class="toc-text">3.4 数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#expr%E5%91%BD%E4%BB%A4"><span class="toc-number">1.6.</span> <span class="toc-text">expr命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.6.1.</span> <span class="toc-text">字符串表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.6.2.</span> <span class="toc-text">整数表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.6.3.</span> <span class="toc-text">逻辑表达式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#read%E5%91%BD%E4%BB%A4"><span class="toc-number">1.7.</span> <span class="toc-text">read命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#echo%E5%91%BD%E4%BB%A4"><span class="toc-number">1.8.</span> <span class="toc-text">echo命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#printf%E5%91%BD%E4%BB%A4"><span class="toc-number">1.9.</span> <span class="toc-text">printf命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#test%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.10.</span> <span class="toc-text">test命令与判断符号[]</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#test%E7%94%A8%E6%B3%95"><span class="toc-number">1.10.1.</span> <span class="toc-text">test用法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD"><span class="toc-number">1.10.2.</span> <span class="toc-text">文件类型判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%88%A4%E6%96%AD"><span class="toc-number">1.10.3.</span> <span class="toc-text">文件权限判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E9%97%B4%E6%AF%94%E8%BE%83"><span class="toc-number">1.10.4.</span> <span class="toc-text">整数间比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83"><span class="toc-number">1.10.5.</span> <span class="toc-text">字符串比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E6%9D%A1%E4%BB%B6%E5%88%A4%E5%AE%9A"><span class="toc-number">1.10.6.</span> <span class="toc-text">多重条件判定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.10.7.</span> <span class="toc-text">判断符号[]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.11.</span> <span class="toc-text">判断语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.11.1.</span> <span class="toc-text">if语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#case%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.11.2.</span> <span class="toc-text">case语句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.12.</span> <span class="toc-text">循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.12.1.</span> <span class="toc-text">for语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#while%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.12.2.</span> <span class="toc-text">while语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#until%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.12.3.</span> <span class="toc-text">until语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6"><span class="toc-number">1.12.4.</span> <span class="toc-text">循环控制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.13.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exit%E5%91%BD%E4%BB%A4"><span class="toc-number">1.14.</span> <span class="toc-text">exit命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">1.15.</span> <span class="toc-text">文件重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E8%84%9A%E6%9C%AC"><span class="toc-number">1.16.</span> <span class="toc-text">引入外部脚本</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/12/26/shell%E8%AF%AD%E6%B3%95/" title="shell语法"><img src="https://haowallpaper.com/link/common/file/getCroppingImg/15565330088759616" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="shell语法"/></a><div class="content"><a class="title" href="/2024/12/26/shell%E8%AF%AD%E6%B3%95/" title="shell语法">shell语法</a><time datetime="2024-12-26T05:48:38.000Z" title="发表于 2024-12-26 13:48:38">2024-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/26/vim%E5%92%8Ctmux/" title="vim和tmux"><img src="https://haowallpaper.com/link/common/file/getCroppingImg/15565330088759616" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vim和tmux"/></a><div class="content"><a class="title" href="/2024/12/26/vim%E5%92%8Ctmux/" title="vim和tmux">vim和tmux</a><time datetime="2024-12-26T05:38:01.000Z" title="发表于 2024-12-26 13:38:01">2024-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/25/Linux%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/" title="Linux常用文件命令"><img src="https://haowallpaper.com/link/common/file/getCroppingImg/15565330088759616" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux常用文件命令"/></a><div class="content"><a class="title" href="/2024/12/25/Linux%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/" title="Linux常用文件命令">Linux常用文件命令</a><time datetime="2024-12-25T14:45:14.000Z" title="发表于 2024-12-25 22:45:14">2024-12-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/25/%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="管道、环境变量及其常用命令"><img src="https://haowallpaper.com/link/common/file/getCroppingImg/15565330088759616" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="管道、环境变量及其常用命令"/></a><div class="content"><a class="title" href="/2024/12/25/%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="管道、环境变量及其常用命令">管道、环境变量及其常用命令</a><time datetime="2024-12-25T13:52:29.000Z" title="发表于 2024-12-25 21:52:29">2024-12-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/25/Git/" title="Git"><img src="https://haowallpaper.com/link/common/file/getCroppingImg/15565330088759616" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git"/></a><div class="content"><a class="title" href="/2024/12/25/Git/" title="Git">Git</a><time datetime="2024-12-25T13:20:29.000Z" title="发表于 2024-12-25 21:20:29">2024-12-25</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="workboard"><div id="runtimeTextTip"></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2024 By <a class="footer-bar-link" href="/" title="徐娇娇" target="_blank">徐娇娇</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://userxjj.github.io/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.xujiaojiaojiao.cn/" title="xjjapp"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="xjjapp"/><span class="back-menu-item-text">xjjapp</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 互动</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Linux%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/" style="font-size: 0.88rem;">Linux常用文件命令<sup>1</sup></a><a href="/tags/git/" style="font-size: 0.88rem;">git<sup>1</sup></a><a href="/tags/heapSort/" style="font-size: 0.88rem;">heapSort<sup>1</sup></a><a href="/tags/mergeSort/" style="font-size: 0.88rem;">mergeSort<sup>1</sup></a><a href="/tags/quickSort/" style="font-size: 0.88rem;">quickSort<sup>1</sup></a><a href="/tags/shell/" style="font-size: 0.88rem;">shell<sup>1</sup></a><a href="/tags/shellSort/" style="font-size: 0.88rem;">shellSort<sup>1</sup></a><a href="/tags/vim%E5%92%8Ctmux/" style="font-size: 0.88rem;">vim和tmux<sup>1</sup></a><a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 0.88rem;">嵌入式<sup>1</sup></a><a href="/tags/%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 0.88rem;">管道、环境变量及其常用命令<sup>1</sup></a><a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 0.88rem;">设计模式<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("12/17/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎来到我的博客!`,
+    `生活明朗, 万物可爱`,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By xujiaojiao V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 小饺子 %c 你正在访问 徐娇娇 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("12/17/2024 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "";
+        img.title = "明天继续加油~~";
+        img.alt = "明天继续加油~~";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7MMzG8yyatpji22LNGIM2pGm-gzGzoHsz',
+      appKey: 'k1XOcKls9zTSRdizdkIxUeyb',
+      avatar: 'monsterid',
+      serverURLs: 'https://7mmzg8yy.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="分类"></div><script src="https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = '?d=monsterid'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://7mmzg8yy.lc-cn-n1-shared.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": '7MMzG8yyatpji22LNGIM2pGm-gzGzoHsz',
+        "X-LC-Key": 'k1XOcKls9zTSRdizdkIxUeyb',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
