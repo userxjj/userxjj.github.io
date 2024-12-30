@@ -1,0 +1,1072 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>CSS | xujiaojiao</title><meta name="keywords" content="css"><meta name="author" content="徐娇娇"><meta name="copyright" content="徐娇娇"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="CSS"><meta name="application-name" content="CSS"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="CSS"><meta property="og:url" content="http://example.com/2024/12/30/CSS/index.html"><meta property="og:site_name" content="xujiaojiao"><meta property="og:description" content="2 CSS 2.1 样式定义方式2.1.1 行内样式表（inline style sheet直接定义在标签的 style 属性中。 ●ㅤ作用范围：仅对当前标签产生影响。 例如： 12&amp;lt;img src&amp;#x3D;&amp;quot;&amp;#x2F;images&amp;#x2F;mountain.jpg&amp;quot; alt&amp;#x3D;&amp;quot;&amp;amp;quo"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://cdn.desnlee.com/img/blog/ef6cc8d24d.jpg"><meta property="article:author" content="徐娇娇"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://cdn.desnlee.com/img/blog/ef6cc8d24d.jpg"><meta name="description" content="2 CSS 2.1 样式定义方式2.1.1 行内样式表（inline style sheet直接定义在标签的 style 属性中。 ●ㅤ作用范围：仅对当前标签产生影响。 例如： 12&amp;lt;img src&amp;#x3D;&amp;quot;&amp;#x2F;images&amp;#x2F;mountain.jpg&amp;quot; alt&amp;#x3D;&amp;quot;&amp;amp;quo"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2024/12/30/CSS/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🔍 分享与热心帮助","🔨 设计开发一条龙"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    simplehomepage: false,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 徐娇娇","link":"链接: ","source":"来源: xujiaojiao","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'xujiaojiao',
+  title: 'CSS',
+  postAI: '',
+  pageFillDescription: '2 CSS, 2.1 样式定义方式, 2.1.1 行内样式表（inline style sheet, 2.1.2 内部样式表（internal style sheet, 2.1.3 外部样式表（external style sheet, 2.1.4 注释, 2.2 选择器, 2.2.1 标签选择器, 2.2.2 ID选择器, 2.2.3 类选择器, 2.2.4 伪类选择器, 2.2.5 样式渲染优先级, 2.3 颜色, 2.3.1 预定义的颜色值, 2.3.2 16进制表示法, 2.3.3 RGB表示法, 2.3.4 RGBA表示法, 2.3.5 取色方式, 2.4 文本, 2.4.1 text-align：文本对齐, 2.4.2 line-height：行高, 2.4.3 letter-spacing：字符间距, 2.4.4 text-indent：文本缩进, 2.4.5 text-decoration：文本装饰, 2.4.6 text-shadow：文字阴影, 2.5 字体, 2.5.1 font-size：字体大小, 2.5.2 font-style：字体样式, 2.5.3 font-weight：字体粗细, 2.5.4 font-family：字体系列, 2.6 背景, 2.6.1 background-color：背景颜色, 2.6.2 background-image：背景图片, 2.6.3 background-size：背景尺寸, 2.6.4 background-repeat：背景重复, 2.6.5 background-position：背景位置, 2.6.6 background-attachment：背景附件, 2.7 边框, 2.7.1 border-style：边框样式, 2.7.2 border-width：边框宽度, 2.7.3 border-color：边框颜色, 2.7.4 border-radius：边框半径, 2.7.5 border-collapse：边框折叠, 2.8 元素展示格式, 2.8.1 展示, 2.8.2 white-space：空白, 2.8.3 text-overflow：文本溢出, 2.8.4 overflow：溢出, 2.9 内边距与外边距, 2.9.1 margin：外边距, 2.9.2 padding：内边距, 2.10 盒子模型, 2.10.1 box-sizing：盒子尺寸, 2.11 位置, 2.11.1 position：位置, 2.12 浮动, 2.12.1 float：浮动, 2.12.2 clear：清除, 2.13 flex布局, 2.13.1 flex-direction：弹性方向, 2.13.2 flex-wrap：弹性包装, 2.13.3 flex-flow：弹性流动, 2.13.4 justify-content：证明内容, 2.13.5 align-items：对齐项目, 2.13.6 align-content：对齐内容, 2.13.7 order：命令, 2.13.8 flex-grow：弹性成长, 2.13.9 flex-shrink：弹性收缩, 2.13.10 flex-basis：弹性基础, 2.13.11 flex：柔性, 2.14 响应式布局, 2.14.1 media查询, 2.14.2 Bootstrap, 2.15 作业, homework_1, homework_2, homework_3, homework_4, homework_5, homework_6, homework_7, homework_8, homework_9, homework_10样式定义方式行内样式表直接定义在标签的属性中作用范围仅对当前标签产生影响例如内部样式表定义在标签中通过选择器影响对应的标签作用范围可以对同一个页面中的多个元素产生影响外部样式表定义在样式文件中通过选择器影响对应的标签可以用标签引入某些页面作用范围可以对多个页面产生影响注释注意不能使用只有注释选择器标签选择器选择所有标签选择器选择为的标签类选择器选择所有类的标签伪类选择器伪类用于定义元素的特殊状态链接伪类选择器链接访问前的样式链接访问后的样式鼠标悬停时的样式鼠标点击后长按时的样式聚焦后的样式位置伪类选择器选择是其父标签第个子元素的所有元素目标伪类选择器当指向该元素时生效复合选择器由两个及以上基础选择器组合而成的选择器同时选择元素和元素选则包含某类的元素选择紧跟的元素选择内的所有元素选择父标签是的所有元素通配符选择器选择所有标签选择具有某个属性的所有标签选择值为的所有标签伪元素选择器将特定内容当做一个元素选择这些元素的选择器被称为伪元素选择器选择第一个字母选择第一行选择已被选中的内容可以在元素后插入内容可以在元素前插入内容样式渲染优先级权重大小越具体的选择器权重越大行内样式选择器类与伪类选择器标签选择器通用选择器权重相同时后面的样式会覆盖前面的样式继承自父元素的权重最低颜色预定义的颜色值等等进制表示法使用位进制数表示颜色例如其中第位表示红色第位表示绿色第位表示蓝色简写方式等价于表示法其中第一个数表示红色第二个数表示绿色第三个数表示蓝色表示法前三个数同上第四个数表示透明度取色方式网页里的颜色可以在的调试模式下获取其他颜色可以使用的截图软件我更推荐微软商店就可以下载直接按键可以复制颜色值按住再按键可以复制进制颜色值文本文本对齐属性定义行内内容例如文字如何相对它的块父元素对齐并不控制块元素自己的对齐只控制它的行内内容的对齐行高属性用于设置多行元素的空间量如多行文本的间距对于块级元素它指定元素行盒的最小高度对于非替代的元素它用于计算行盒的高度补充知识点长度单位单位描述设备上的像素点相对于父元素的百分比相对于当前元素的字体大小相对于根元素的字体大小相对于视窗宽度的百分比相对于视窗高度的百分比字符间距的属性用于设置文本字符的间距文本缩进属性能定义一个块元素首行文本内容之前的缩进量文本装饰这个属性是用于设置文本的修饰线外观的下划线上划线贯穿线删除线或闪烁它是和新出现的属性的缩写文字阴影为文字添加阴影可以为文字与添加多个阴影阴影值之间用逗号隔开每个阴影值由元素在和方向的偏移量模糊半径和颜色值组成字体字体大小属性指定字体的大小因为该属性的值会被用于计算和长度单位定义该值可能改变其他元素的大小字体样式属性允许你选择字体下的或样式字体粗细属性指定了字体的粗细程度一些字体只提供和两种值字体系列属性允许您通过给定一个有先后顺序的由字体名或者字体族名组成的列表来为选定的元素设置字体属性值用逗号隔开浏览器会选择列表中第一个该计算机上有安装的字体或者是通过指定的可以直接下载的字体背景背景颜色属性中的会设置元素的背景色属性的值为颜色值或关键字二者选其一背景图片属性用于为一个元素设置一个或者多个背景图像渐变色背景尺寸设置背景图片大小图片可以保有其原有的尺寸或者拉伸到新的尺寸或者在保持其原有比例的同时缩放到元素的可用空间的尺寸背景重复属性定义背景图像的重复方式背景图像可以沿着水平轴垂直轴两个轴重复或者根本不重复背景位置为背景图片设置初始位置背景附件属性决定背景图像的位置是在视口内固定或者随着包含它的区块滚动边框边框样式是一个简写属性用来设定元素所有边框的样式边框宽度属性可以设置盒子模型的边框宽度边框颜色属性是一个用于设置元素四个边框颜色的快捷属性边框半径属性允许你设置元素的外边框圆角当使用一个半径时确定一个圆形当使用两个半径时确定一个椭圆这个椭圆与边框的交集形成圆角效果边框折叠属性是用来决定表格的边框是分开的还是合并的在分隔模式下相邻的单元格都拥有独立的边框在合并模式下相邻单元格共享边框元素展示格式展示块元素独占一行均可控制默认行元素可以共占一行与无效水平方向的与有效竖直方向的与无效默认为本身内容宽度行内块元素可以共占一行均可控制默认为本身内容宽度空白属性是用来设置如何处理元素中的空白文本溢出属性确定如何向用户发出未显示的溢出内容信号它可以被剪切显示一个省略号或显示一个自定义字符串溢出属性定义当一个元素的内容太大而无法适应块级格式化上下文时候该做什么它是和的简写属性内边距与外边距外边距属性为给定元素设置所有四个上下左右方向的外边距属性可以接受个值上右下左的顺序可以分别指明四个方向可取值固定值相对于包含块的宽度以百分比值为外边距让浏览器自己选择一个合适的外边距有时在一些特殊情况下该值可以使元素居中外边距重叠块的上外边距和下外边距有时合并折叠为单个边距其大小为单个边距的最大值或如果它们相等则仅为其中一个这种行为称为边距折叠父元素与后代元素父元素没有上边框和时后代元素的会溢出溢出后父元素的会与后代元素取最大值内边距简写属性控制元素所有四条边的内边距区域可以接受个值上右下左的顺序可以分别指明四个方向可取值固定值相对于包含块的宽度以百分比值为内边距盒子模型盒子尺寸中的属性定义了应该如何计算一个元素的总宽度和总高度是默认值设置和均会增加元素的宽高设置和不会改变元素的宽高而是挤占内容区域位置位置属性用于指定一个元素在文档中的定位方式定位类型定位元素是其计算后位置属性为或的一个元素换句话说除以外的任何东西相对定位元素是计算后位置属性为的元素绝对定位元素是计算后位置属性为或的元素粘性定位元素是计算后位置属性为的元素取值该关键字指定元素使用正常的布局行为即元素在文档常规流中当前的布局位置此时和属性无效该关键字下元素先放置在未添加定位时的位置再在不改变页面布局的前提下调整元素位置因此会在此元素未添加定位时所在位置留下空白等调整元素相对于初始位置的偏移量元素会被移出正常文档流并不为元素预留空间通过指定元素相对于最近的非定位祖先元素的偏移来确定元素位置绝对定位的元素可以设置外边距且不会与其他边距合并元素会被移出正常文档流并不为元素预留空间而是通过指定元素相对于屏幕视口的位置来指定元素位置元素的位置在屏幕滚动时不会改变元素根据正常文档流进行定位然后相对它的最近滚动祖先和最近块级祖先包括元素基于和的值进行偏移偏移值不会影响任何其他元素的位置浮动浮动属性指定一个元素应沿其容器的左侧或右侧放置允许文本和内联元素环绕它该元素从网页的正常流动文档流中移除尽管仍然保持部分的流动性与绝对定位相反由于意味着使用块布局它在某些情况下修改值的计算值为或时使用后会统一变成取值表明元素必须浮动在其所在的块容器左侧的关键字表明元素必须浮动在其所在的块容器右侧的关键字清除有时你可能想要强制元素移至任何浮动元素下方比如说你可能希望某个段落与浮动元素保持相邻的位置但又希望这个段落从头开始强制独占一行此时可以使用取值清除左侧浮动清除右侧浮动清除左右两侧浮动布局简写属性设置了弹性项目如何增大或缩小以适应其弹性容器中可用的空间弹性方向属性指定了内部元素是如何在容器中布局的定义了主轴的方向正方向或反方向取值容器的主轴被定义为与文本方向相同主轴起点和主轴终点与内容方向相同表现和相同但是置换了主轴起点和主轴终点容器的主轴和块轴相同主轴起点与主轴终点和书写模式的前后点相同表现和相同但是置换了主轴起点和主轴终点弹性包装的属性指定元素单行显示还是多行显示如果允许换行这个属性允许你控制行的堆叠方向取值默认值不换行换行第一行在上方换行第一行在下方弹性流动属性是和的简写默认值为证明内容属性定义了浏览器之间如何分配顺着弹性容器主轴或者网格行轴的元素之间及其周围的空间取值默认值左对齐右对齐左右两段对齐在每行上均匀分配弹性元素相邻元素间距离相同每行第一个元素到行首的距离和每行最后一个元素到行尾的距离将会是相邻元素之间距离的一半项都沿着主轴均匀分布在指定的对齐容器中相邻项之间的间距主轴起始位置到第一个项的间距主轴结束位置到最后一个项的间距都完全一样对齐项目属性将所有直接子节点上的值设置为一个组属性设置项目在其包含块中在交叉轴方向上的对齐方式取值元素向主轴起点对齐元素向主轴终点对齐元素在侧轴居中弹性元素被在侧轴方向被拉伸到与容器相同的高度或宽度对齐内容的属性设置了浏览器如何沿着弹性盒子布局的纵轴和网格布局的主轴在内容项之间和周围分配空间取值所有行从垂直轴起点开始填充第一行的垂直轴起点边和容器的垂直轴起点边对齐接下来的每一行紧跟前一行所有行从垂直轴末尾开始填充最后一行的垂直轴终点和容器的垂直轴终点对齐同时所有后续行与前一个对齐所有行朝向容器的中心填充每行互相紧挨相对于容器居中对齐容器的垂直轴起点边和第一行的距离相等于容器的垂直轴终点边和最后一行的距离拉伸所有行来填满剩余空间剩余空间平均地分配给每一行命令定义项目的顺序值越小越靠前弹性成长属性设置项主尺寸的增长系数负值无效默认为弹性收缩属性指定了元素的收缩规则元素仅在默认宽度之和大于容器的时候才会发生收缩其收缩的大小是依据的值负值无效默认为弹性基础属性指定了元素在主轴方向上的初始大小取值值可以是该值也可以是一个相对于其父弹性盒容器主轴尺寸的百分数负值是不被允许的默认为柔性的缩写常用取值响应式布局查询当屏幕宽度满足特定条件时应用例如点击传送作业编写一个完整的页面标签内容如下要求所有标签的字体颜色设置为宽度和高度均设置为从前往后数第奇数个的背景颜色设置为从前往后数第偶数个的背景颜色设置为所有包含类的的宽度和高度均设置为为的的宽度和高度均设置为对于所有包含类的当鼠标悬浮时背景颜色变成作业如下编写一个完整的页面标签内容如下春盼望着盼望着东风来了春天的脚步近了一切都像刚睡醒的样子欣欣然张开了眼山朗润起来了水涨起来了太阳的脸红起来了小草偷偷地从土里钻出来嫩嫩的绿绿的园子里田野里瞧去一大片一大片满是的坐着躺着打两个滚踢几脚球赛几趟跑捉几回迷藏风轻悄悄的草软绵绵的桃树杏树梨树你不让我我不让你都开满了花赶趟儿红的像火粉的像霞白的像雪花里带着甜味儿闭了眼树上仿佛已经满是桃儿杏儿梨儿花下成千成百的蜜蜂嗡嗡地闹着大小的蝴蝶飞来飞去野花遍地是杂样儿有名字的没名字的散在草丛里像眼睛像星星还眨呀眨的吹面不寒杨柳风不错的像母亲的手抚摸着你风里带来些新翻的泥土的气息混着青草味儿还有各种花的香都在微微润湿的空气里酝酿鸟儿将窠巢安在繁花嫩叶当中高兴起来了呼朋引伴地卖弄清脆的喉咙唱出宛转的曲子与轻风流水应和着牛背上牧童的短笛这时候也成天在嘹亮地响雨是最寻常的一下就是三两天可别恼看像牛毛像花针像细丝密密地斜织着人家屋顶上全笼着一层薄烟树叶子却绿得发亮小草也青得逼你的眼傍晚时候上灯了一点点黄晕的光烘托出一片安静而和平的夜乡下去小路上石桥边有撑起伞慢慢走着的人还有地里工作的农夫披着蓑戴着笠的他们的草屋稀稀疏疏的在雨里静默着天上风筝渐渐多了地上孩子也多了城里乡下家家户户老老小小他们也赶趟儿似的一个个都出来了舒活舒活筋骨抖擞抖擞精神各做各的一份事去一年之计在于春刚起头儿有的是工夫有的是希望春天像刚落地的娃娃从头到脚都是新的他生长着春天像小姑娘花枝招展的笑着走着春天像健壮的青年有铁一般的胳膊和腰脚他领着我们上前去要求标签的文本居中所有标签的行高设置为字间距设置为段首缩进设置为倍字体大小为所有包含类的标签设置下划线样式为为所有包含类的标签设置字体阴影样式为每个标签的首字母的字体大小更改为字体颜色设置为为所有包含类的标签设置字体粗细权值为为所有包含类的标签设置字体斜体为所有包含类的标签设置字体为等宽字体作业如下春盼望着盼望着东风来了春天的脚步近了一切都像刚睡醒的样子欣欣然张开了眼山朗润起来了水涨起来了太阳的脸红起来了小草偷偷地从土里钻出来嫩嫩的绿绿的园子里田野里瞧去一大片一大片满是的坐着躺着打两个滚踢几脚球赛几趟跑捉几回迷藏风轻悄悄的草软绵绵的桃树杏树梨树你不让我我不让你都开满了花赶趟儿红的像火粉的像霞白的像雪花里带着甜味儿闭了眼树上仿佛已经满是桃儿杏儿梨儿花下成千成百的蜜蜂嗡嗡地闹着大小的蝴蝶飞来飞去野花遍地是杂样儿有名字的没名字的散在草丛里像眼睛像星星还眨呀眨的吹面不寒杨柳风不错的像母亲的手抚摸着你风里带来些新翻的泥土的气息混着青草味儿还有各种花的香都在微微润湿的空气里酝酿鸟儿将窠巢安在繁花嫩叶当中高兴起来了呼朋引伴地卖弄清脆的喉咙唱出宛转的曲子与轻风流水应和着牛背上牧童的短笛这时候也成天在嘹亮地响雨是最寻常的一下就是三两天可别恼看像牛毛像花针像细丝密密地斜织着人家屋顶上全笼着一层薄烟树叶子却绿得发亮小草也青得逼你的眼傍晚时候上灯了一点点黄晕的光烘托出一片安静而和平的夜乡下去小路上石桥边有撑起伞慢慢走着的人还有地里工作的农夫披着蓑戴着笠的他们的草屋稀稀疏疏的在雨里静默着天上风筝渐渐多了地上孩子也多了城里乡下家家户户老老小小他们也赶趟儿似的一个个都出来了舒活舒活筋骨抖擞抖擞精神各做各的一份事去一年之计在于春刚起头儿有的是工夫有的是希望春天像刚落地的娃娃从头到脚都是新的他生长着春天像小姑娘花枝招展的笑着走着春天像健壮的青年有铁一般的胳膊和腰脚他领着我们上前去编写一个完整的页面标签内容如下要求所有标签的宽度和高度均设置为外边距设置为第一个的背景颜色设置为第二个的背景图片设置为背景图片大小设置为背景图片不重复第三个的背景图片设置为背景图片大小设置为两张背景图片均不重复两张背景图片的位置设置为第四个的背景图片设置为背景图片大小设置为背景图片不重复背景图片的位置在视口内固定作业如下编写一个完整的页面标签内容如下要求所有标签的宽度和高度均设置为第一个满足四条边的宽度为上右下左四条边的样式依次为上下两条边的颜色为左右两条边的颜色为外边框圆角半径为第二个满足四条边的样式为外边框圆角半径为作业如下编写一个完整的页面标签内容如下要求包含类的标签满足属性为宽度和高度均为内边距为外边距为背景颜色为包含类的标签满足属性为宽度和高度均为内边距为外边距为背景颜色为字体颜色为所有满足属性为左右内边距为左右外边距为背景颜色为字体颜色为包含类的标签满足属性为宽度和高度均为内边距与外边距均为背景颜色为字体颜色为属性为属性为作业如下编写一个完整的页面标签内容如下文本文本要求所有标签满足宽度和高度均为背景颜色为第一个满足上右下左外边距依次为上右下左内边距依次为第二个在父标签内水平居中外边距设置为作业如下文本文本编写一个完整的页面标签内容如下要求所有标签满足宽度和高度均为内边距与外边距均为背景颜色为边框样式为第一个为内容盒子模型第二个为边框盒子模型作业如下编写一个完整的页面标签内容如下要求的高度设为外边距设为所有标签的样式设置为宽度与高度均为背景颜色设置为外边距设置为第一个的属性为第二个的样式设置为的值为的值为的值为第三个的样式设置为的值为背景颜色为的值为的值为第四个的样式设置为的值为背景颜色为的值为的值为第十个的样式为的值为背景颜色为的值为作业如下编写一个完整的页面标签内容如下要求包含类的标签满足宽度与高度均为背景颜色为包含类的标签满足宽度和高度均为外边距为背景颜色为属性的值为包含类的标签满足宽度和高度均为背景颜色为必须移动到之前的浮动元素的下面使用属性作业如下编写一个完整的页面标签内容如下要求所有包含类的标签满足属性为宽度为高度为背景颜色为外边距为所有类标签的子标签满足宽度与高度均为所有类标签的第奇数个子元素满足背景颜色为所有类标签的第偶数个子元素满足背景颜色为第一个类标签满足属性为属性为属性为第二个类标签满足属性为属性为第二个类标签的所有第奇数个子标签满足属性为属性为第二个类标签的所有第偶数个子标签满足属性为属性为作业如下',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-30 13:47:38',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://s1.aigei.com/src/img/gif/03/03c121e624254470846ed8af309ad291.gif?imageMogr2/auto-orient/thumbnail/!282x272r/gravity/Center/crop/282x272/quality/85/%7CimageView2/2/w/282&amp;e=1735488000&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:8ff1Zbbf_c1U_QWNIcPEFx06OJM="/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://userxjj.github.io/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.xujiaojiaojiao.cn/" title="xjjapp"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="xjjapp"/><span class="back-menu-item-text">xjjapp</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">xujiaojiao</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 互动</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/22/67680d24634a2.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://www.helloimg.com/i/2024/12/22/67680d24634a2.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/22/67680d250f28e.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://www.helloimg.com/i/2024/12/22/67680d250f28e.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Linux%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/" style="font-size: 1.05rem;">Linux常用文件命令<sup>1</sup></a><a href="/tags/SSH%E5%92%8CSCP/" style="font-size: 1.05rem;">SSH和SCP<sup>1</sup></a><a href="/tags/css/" style="font-size: 1.05rem;">css<sup>1</sup></a><a href="/tags/git/" style="font-size: 1.05rem;">git<sup>1</sup></a><a href="/tags/heapSort/" style="font-size: 1.05rem;">heapSort<sup>1</sup></a><a href="/tags/html/" style="font-size: 1.05rem;">html<sup>1</sup></a><a href="/tags/mergeSort/" style="font-size: 1.05rem;">mergeSort<sup>1</sup></a><a href="/tags/quickSort/" style="font-size: 1.05rem;">quickSort<sup>1</sup></a><a href="/tags/shell/" style="font-size: 1.05rem;">shell<sup>1</sup></a><a href="/tags/shellSort/" style="font-size: 1.05rem;">shellSort<sup>1</sup></a><a href="/tags/thrift/" style="font-size: 1.05rem;">thrift<sup>1</sup></a><a href="/tags/thrift-1/" style="font-size: 1.05rem;">thrift-1<sup>1</sup></a><a href="/tags/vim%E5%92%8Ctmux/" style="font-size: 1.05rem;">vim和tmux<sup>1</sup></a><a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 1.05rem;">嵌入式<sup>1</sup></a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">操作系统<sup>1</sup></a><a href="/tags/%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 1.05rem;">管道、环境变量及其常用命令<sup>1</sup></a><a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.05rem;">设计模式<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">转载</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/Web/" itemprop="url">Web</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/css/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>css</span></a></span></div></div><h1 class="post-title" itemprop="name headline">CSS</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-12-30T05:45:44.000Z" title="发表于 2024-12-30 13:45:44">2024-12-30</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-12-30T05:47:38.053Z" title="更新于 2024-12-30 13:47:38">2024-12-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">11.1k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>47分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="CSS"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为武汉"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>武汉</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://haowallpaper.com/link/common/file/getCroppingImg/15812107217637696"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://www.xujiaojiao.xyz"><header><a class="post-meta-categories" href="/categories/Web/" itemprop="url">Web</a><a href="/tags/css/" tabindex="-1" itemprop="url">css</a><h1 id="CrawlerTitle" itemprop="name headline">CSS</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">xujiaojiao</span><time itemprop="dateCreated datePublished" datetime="2024-12-30T05:45:44.000Z" title="发表于 2024-12-30 13:45:44">2024-12-30</time><time itemprop="dateCreated datePublished" datetime="2024-12-30T05:47:38.053Z" title="更新于 2024-12-30 13:47:38">2024-12-30</time></header><h1 id="2-CSS"><a href="#2-CSS" class="headerlink" title="2 CSS"></a>2 CSS</h1><hr>
+<h2 id="2-1-样式定义方式"><a href="#2-1-样式定义方式" class="headerlink" title="2.1 样式定义方式"></a>2.1 样式定义方式</h2><h3 id="2-1-1-行内样式表（inline-style-sheet"><a href="#2-1-1-行内样式表（inline-style-sheet" class="headerlink" title="2.1.1 行内样式表（inline style sheet"></a>2.1.1 行内样式表（inline style sheet</h3><p><strong>直接定义在标签的 <code>style</code> 属性中。</strong></p>
+<p>●ㅤ<strong>作用范围：仅对当前标签产生影响。</strong></p>
+<p><strong>例如：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;/images/mountain.jpg&quot; alt=&quot;&quot; style=&quot;width: 300px; height: 200px;&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-1-2-内部样式表（internal-style-sheet"><a href="#2-1-2-内部样式表（internal-style-sheet" class="headerlink" title="2.1.2 内部样式表（internal style sheet"></a>2.1.2 内部样式表（internal style sheet</h3><p><strong>定义在 <code>style</code> 标签中，通过选择器影响对应的标签。</strong></p>
+<p>●ㅤ<strong>作用范围：可以对同一个页面中的多个元素产生影响。</strong></p>
+<hr>
+<h3 id="2-1-3-外部样式表（external-style-sheet"><a href="#2-1-3-外部样式表（external-style-sheet" class="headerlink" title="2.1.3 外部样式表（external style sheet"></a>2.1.3 外部样式表（external style sheet</h3><p><strong>定义在 <code>css</code> 样式文件中，通过选择器影响对应的标签。可以用 <code>link</code> 标签引入某些页面。</strong></p>
+<p>●ㅤ<strong>作用范围：可以对多个页面产生影响。</strong></p>
+<hr>
+<h3 id="2-1-4-注释"><a href="#2-1-4-注释" class="headerlink" title="2.1.4 注释"></a>2.1.4 注释</h3><p><strong>注意不能使用 <code>//</code>。</strong></p>
+<p><strong>只有：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 注释 */ </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-2-选择器"><a href="#2-2-选择器" class="headerlink" title="2.2 选择器"></a>2.2 选择器</h2><h3 id="2-2-1-标签选择器"><a href="#2-2-1-标签选择器" class="headerlink" title="2.2.1 标签选择器"></a>2.2.1 标签选择器</h3><p><strong>选择所有 <code>div</code> 标签：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: gray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-2-2-ID选择器"><a href="#2-2-2-ID选择器" class="headerlink" title="2.2.2 ID选择器"></a>2.2.2 ID选择器</h3><p><strong>选择ID为 <code>rect-1</code> 的标签：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#rect-1 &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: gray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-2-3-类选择器"><a href="#2-2-3-类选择器" class="headerlink" title="2.2.3 类选择器"></a>2.2.3 类选择器</h3><p><strong>选择所有 <code>rectangle</code> 类的标签：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.rectangle &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: gray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-2-4-伪类选择器"><a href="#2-2-4-伪类选择器" class="headerlink" title="2.2.4 伪类选择器"></a>2.2.4 伪类选择器</h3><p><strong>伪类用于定义元素的特殊状态。</strong></p>
+<p><strong>1. 链接伪类选择器：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>:link</code>：链接访问前的样式**</p>
+<p>ㅤㅤ●ㅤ**<code>:visited</code>：链接访问后的样式**</p>
+<p>ㅤㅤ●ㅤ**<code>:hover</code>：鼠标悬停时的样式**</p>
+<p>ㅤㅤ●ㅤ**<code>:active</code>：鼠标点击后长按时的样式**</p>
+<p>ㅤㅤ●ㅤ**<code>:focus</code>：聚焦后的样式**</p>
+<hr>
+<p><strong>2. 位置伪类选择器：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>:nth-child(n)</code>：选择是其父标签第 <code>n</code> 个子元素的所有元素。**</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div:nth-child(2n + 1) &#123; /* div:nth-child(odd) */</span><br><span class="line">    background-color: #0000FF;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div:nth-child(2n + 2) &#123; /* div:nth-child(even) */</span><br><span class="line">    background-color: rgba(255, 0, 0, 0.7);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>3. 目标伪类选择器：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>:target</code>：当 url 指向该元素时生效。**</p>
+<hr>
+<p><strong>4. 复合选择器</strong></p>
+<p><strong>由两个及以上基础选择器组合而成的选择器。</strong></p>
+<p>ㅤㅤ●ㅤ**<code>element1, element2</code>：同时选择元素 <code>element1</code> 和元素 <code>element2</code>。**</p>
+<p>ㅤㅤ●ㅤ**<code>element.class</code>：选则包含某类的 <code>element</code> 元素。**</p>
+<p>ㅤㅤ●ㅤ**<code>element1 + element2</code>：选择紧跟 <code>element1</code> 的 <code>element2</code> 元素。**</p>
+<p>ㅤㅤ●ㅤ**<code>element1 element2</code>：选择 <code>element1</code> 内的所有 <code>element2</code> 元素。**</p>
+<p>ㅤㅤ●ㅤ**<code>element1 &gt; element2</code>：选择父标签是 <code>element1</code> 的所有 <code>element2</code> 元素。**</p>
+<hr>
+<p><strong>5. 通配符选择器</strong></p>
+<p>ㅤㅤ●ㅤ**<code>*</code>：选择所有标签**</p>
+<p>ㅤㅤ●ㅤ**<code>[attribute]</code>：选择具有某个属性的所有标签**</p>
+<p>ㅤㅤ●ㅤ**<code>[attribute=value]</code>：选择 <code>attribute</code> 值为 <code>value</code> 的所有标签**</p>
+<hr>
+<p><strong>6. 伪元素选择器</strong></p>
+<p><strong>将特定内容当做一个元素，选择这些元素的选择器被称为伪元素选择器。</strong></p>
+<p>ㅤㅤ●ㅤ**<code>::first-letter</code>：选择第一个字母**</p>
+<p>ㅤㅤ●ㅤ**<code>::first-line</code>：选择第一行**</p>
+<p>ㅤㅤ●ㅤ**<code>::selection</code>：选择已被选中的内容**</p>
+<p>ㅤㅤ●ㅤ**<code>::after</code>：可以在元素后插入内容**</p>
+<p>ㅤㅤ●ㅤ**<code>::before</code>：可以在元素前插入内容**</p>
+<hr>
+<h3 id="2-2-5-样式渲染优先级"><a href="#2-2-5-样式渲染优先级" class="headerlink" title="2.2.5 样式渲染优先级"></a>2.2.5 样式渲染优先级</h3><p>ㅤㅤ●ㅤ<strong>权重大小，越具体的选择器权重越大：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>!important</code> &gt; <code>行内样式</code> &gt; <code>ID选择器</code> &gt; <code>类与伪类选择器</code> &gt; <code>标签选择器</code> &gt; <code>通用选择器</code>**</p>
+<p>ㅤㅤ●ㅤ<strong>权重相同时，后面的样式会覆盖前面的样式</strong></p>
+<p>ㅤㅤ●ㅤ<strong>继承自父元素的权重最低</strong></p>
+<hr>
+<h2 id="2-3-颜色"><a href="#2-3-颜色" class="headerlink" title="2.3 颜色"></a>2.3 颜色</h2><h3 id="2-3-1-预定义的颜色值"><a href="#2-3-1-预定义的颜色值" class="headerlink" title="2.3.1 预定义的颜色值"></a>2.3.1 预定义的颜色值</h3><p><strong><code>black</code>、<code>white</code>、<code>red</code>、<code>green</code>、<code>blue</code>、<code>lightblue</code>等等。</strong></p>
+<hr>
+<h3 id="2-3-2-16进制表示法"><a href="#2-3-2-16进制表示法" class="headerlink" title="2.3.2 16进制表示法"></a>2.3.2 <code>16</code>进制表示法</h3><p><strong>使用 <code>6</code> 位 <code>16</code> 进制数表示颜色，例如：<code>#ADD8E6</code>。</strong></p>
+<p><strong>其中第 <code>1-2</code> 位表示红色，第 <code>3-4</code> 位表示绿色，第 <code>5-6</code> 位表示蓝色。</strong></p>
+<p><strong>简写方式：<code>#ABC</code>，等价于<code>#AABBCC</code>。</strong></p>
+<hr>
+<h3 id="2-3-3-RGB表示法"><a href="#2-3-3-RGB表示法" class="headerlink" title="2.3.3 RGB表示法"></a>2.3.3 <code>RGB</code>表示法</h3><p><strong><code>rgb(173, 216, 230)</code>。</strong></p>
+<p><strong>其中第一个数表示红色，第二个数表示绿色，第三个数表示蓝色。</strong></p>
+<hr>
+<h3 id="2-3-4-RGBA表示法"><a href="#2-3-4-RGBA表示法" class="headerlink" title="2.3.4 RGBA表示法"></a>2.3.4 <code>RGBA</code>表示法</h3><p><strong><code>rgba(173, 216, 230, 0.5)</code>。</strong></p>
+<p><strong>前三个数同上，第四个数表示透明度。</strong></p>
+<hr>
+<h3 id="2-3-5-取色方式"><a href="#2-3-5-取色方式" class="headerlink" title="2.3.5 取色方式"></a>2.3.5 取色方式</h3><p>ㅤㅤ●ㅤ<strong>网页里的颜色，可以在 <code>chrome</code> 的调试模式下获取</strong></p>
+<p>ㅤㅤ●ㅤ<strong>其他颜色可以使用 <code>QQ</code> 的截图软件：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>我更推荐 <code>Snipaste</code> 微软商店就可以下载</strong></p>
+<p>ㅤㅤ●ㅤ<strong>直接按 <code>c</code> 键，可以复制 <code>rgb</code> 颜色值</strong></p>
+<p>ㅤㅤ●ㅤ<strong>按住 <code>ctrl</code> 再按 <code>c</code> 键，可以复制16进制颜色值</strong></p>
+<hr>
+<h2 id="2-4-文本"><a href="#2-4-文本" class="headerlink" title="2.4 文本"></a>2.4 文本</h2><h3 id="2-4-1-text-align：文本对齐"><a href="#2-4-1-text-align：文本对齐" class="headerlink" title="2.4.1 text-align：文本对齐"></a>2.4.1 <code>text-align</code>：文本对齐</h3><p>ㅤㅤ**<code>text-align</code> <code>CSS</code>属性定义行内内容（例如文字）如何相对它的块父元素对齐。<code>text-align</code> 并不控制块元素自己的对齐，只控制它的行内内容的对齐。**</p>
+<hr>
+<h3 id="2-4-2-line-height：行高"><a href="#2-4-2-line-height：行高" class="headerlink" title="2.4.2 line-height：行高"></a>2.4.2 <code>line-height</code>：行高</h3><p>ㅤㅤ**<code>line-height</code> <code>CSS</code> 属性用于设置多行元素的空间量，如多行文本的间距。对于块级元素，它指定元素行盒（<code>line boxes</code>）的最小高度。对于非替代的 <code>inline</code> 元素，它用于计算行盒（<code>line box</code>）的高度。**</p>
+<p>●ㅤ <strong>补充知识点：长度单位</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">单位</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>px</strong></td>
+<td><strong>设备上的像素点</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>%</strong></td>
+<td><strong>相对于父元素的百分比</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>em</strong></td>
+<td><strong>相对于当前元素的字体大小</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>rem</strong></td>
+<td><strong>相对于根元素的字体大小</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>vw</strong></td>
+<td><strong>相对于视窗宽度的百分比</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>vh</strong></td>
+<td><strong>相对于视窗高度的百分比</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="2-4-3-letter-spacing：字符间距"><a href="#2-4-3-letter-spacing：字符间距" class="headerlink" title="2.4.3 letter-spacing：字符间距"></a>2.4.3 <code>letter-spacing</code>：字符间距</h3><p>ㅤㅤ<strong>CSS 的 <code>letter-spacing</code> 属性用于设置文本字符的间距。</strong></p>
+<hr>
+<h3 id="2-4-4-text-indent：文本缩进"><a href="#2-4-4-text-indent：文本缩进" class="headerlink" title="2.4.4 text-indent：文本缩进"></a>2.4.4 <code>text-indent</code>：文本缩进</h3><p>ㅤㅤ**<code>text-indent</code> 属性能定义一个块元素首行文本内容之前的缩进量。**—</p>
+<hr>
+<h3 id="2-4-5-text-decoration：文本装饰"><a href="#2-4-5-text-decoration：文本装饰" class="headerlink" title="2.4.5 text-decoration：文本装饰"></a>2.4.5 <code>text-decoration</code>：文本装饰</h3><p>ㅤㅤ**<code>text-decoration</code> 这个 <code>CSS</code> 属性是用于设置文本的修饰线外观的（下划线、上划线、贯穿线&#x2F;删除线 或 闪烁）它是 <code>text-decoration-line</code>, <code>text-decoration-color</code>, <code>text-decoration-style</code>, 和新出现的**</p>
+<p>ㅤㅤ**<code>text-decoration-thickness</code> 属性的缩写。**</p>
+<hr>
+<h3 id="2-4-6-text-shadow：文字阴影"><a href="#2-4-6-text-shadow：文字阴影" class="headerlink" title="2.4.6 text-shadow：文字阴影"></a>2.4.6 <code>text-shadow</code>：文字阴影</h3><p>ㅤㅤ**<code>text-shadow</code> 为文字添加阴影。可以为文字与 <code>text-decorations</code>**</p>
+<p>ㅤㅤ<strong>添加多个阴影，阴影值之间用逗号隔开。每个阴影值由元素在 <code>X</code> 和 <code>Y</code> 方向的偏移量、模糊半径和颜色值组成。</strong></p>
+<hr>
+<h2 id="2-5-字体"><a href="#2-5-字体" class="headerlink" title="2.5 字体"></a>2.5 字体</h2><h3 id="2-5-1-font-size：字体大小"><a href="#2-5-1-font-size：字体大小" class="headerlink" title="2.5.1 font-size：字体大小"></a>2.5.1 <code>font-size</code>：字体大小</h3><p>ㅤㅤ**<code>font-size</code> <code>CSS</code> 属性指定字体的大小。因为该属性的值会被用于计算 <code>em</code> 和 <code>ex</code> 长度单位，定义该值可能改变其他元素的大小。**</p>
+<hr>
+<h3 id="2-5-2-font-style：字体样式"><a href="#2-5-2-font-style：字体样式" class="headerlink" title="2.5.2 font-style：字体样式"></a>2.5.2 <code>font-style</code>：字体样式</h3><p>ㅤㅤ**<code>font-style</code> <code>CSS</code> 属性允许你选择 <code>font-family</code> 字体下的 <code>italic</code> 或 <code>oblique</code> 样式。**</p>
+<hr>
+<h3 id="2-5-3-font-weight：字体粗细"><a href="#2-5-3-font-weight：字体粗细" class="headerlink" title="2.5.3 font-weight：字体粗细"></a>2.5.3 <code>font-weight</code>：字体粗细</h3><p>ㅤㅤ**<code>font-weight</code> <code>CSS</code> 属性指定了字体的粗细程度。 一些字体只提供 <code>normal</code> 和 <code>bold</code> 两种值。**</p>
+<hr>
+<h3 id="2-5-4-font-family：字体系列"><a href="#2-5-4-font-family：字体系列" class="headerlink" title="2.5.4 font-family：字体系列"></a>2.5.4 <code>font-family</code>：字体系列</h3><p>ㅤㅤ**<code>CSS</code> 属性 <code>font-family</code> 允许您通过给定一个有先后顺序的，由字体名或者字体族名组成的列表来为选定的元素设置字体。**</p>
+<p>ㅤㅤ<strong>属性值用逗号隔开。浏览器会选择列表中第一个该计算机上有安装的字体，或者是通过 <code>@font-face</code> 指定的可以直接下载的字体。</strong></p>
+<hr>
+<h2 id="2-6-背景"><a href="#2-6-背景" class="headerlink" title="2.6 背景"></a>2.6 背景</h2><h3 id="2-6-1-background-color：背景颜色"><a href="#2-6-1-background-color：背景颜色" class="headerlink" title="2.6.1 background-color：背景颜色"></a>2.6.1 <code>background-color</code>：背景颜色</h3><p>ㅤㅤ**<code>CSS</code> 属性中的 <code>background-color</code> 会设置元素的背景色, 属性的值为颜色值或关键字 <code>transparent</code> 二者选其一。**</p>
+<hr>
+<h3 id="2-6-2-background-image：背景图片"><a href="#2-6-2-background-image：背景图片" class="headerlink" title="2.6.2 background-image：背景图片"></a>2.6.2 <code>background-image</code>：背景图片</h3><p>ㅤㅤ**<code>CSS</code> <code>background-image</code> 属性用于为一个元素设置一个或者多个背景图像。**</p>
+<p>ㅤㅤ●ㅤ<strong>渐变色：<code>linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5))</code></strong></p>
+<hr>
+<h3 id="2-6-3-background-size：背景尺寸"><a href="#2-6-3-background-size：背景尺寸" class="headerlink" title="2.6.3 background-size：背景尺寸"></a>2.6.3 <code>background-size</code>：背景尺寸</h3><p>ㅤ**<code>background-size</code> 设置背景图片大小。图片可以保有其原有的尺寸，或者拉伸到新的尺寸，或者在保持其原有比例的同时缩放到元素的可用空间的尺寸。**</p>
+<hr>
+<h3 id="2-6-4-background-repeat：背景重复"><a href="#2-6-4-background-repeat：背景重复" class="headerlink" title="2.6.4 background-repeat：背景重复"></a>2.6.4 <code>background-repeat</code>：背景重复</h3><p>ㅤ**<code>background-repeat</code> <code>CSS</code> 属性定义背景图像的重复方式。背景图像可以沿着水平轴，垂直轴，两个轴重复，或者根本不重复。**</p>
+<hr>
+<h3 id="2-6-5-background-position：背景位置"><a href="#2-6-5-background-position：背景位置" class="headerlink" title="2.6.5 background-position：背景位置"></a>2.6.5 <code>background-position</code>：背景位置</h3><p>ㅤ**<code>background-position</code> 为背景图片设置初始位置。**</p>
+<hr>
+<h3 id="2-6-6-background-attachment：背景附件"><a href="#2-6-6-background-attachment：背景附件" class="headerlink" title="2.6.6 background-attachment：背景附件"></a>2.6.6 <code>background-attachment</code>：背景附件</h3><p>ㅤ**<code>background-attachment</code> <code>CSS</code> 属性决定背景图像的位置是在视口内固定，或者随着包含它的区块滚动。**</p>
+<hr>
+<h2 id="2-7-边框"><a href="#2-7-边框" class="headerlink" title="2.7 边框"></a>2.7 边框</h2><h3 id="2-7-1-border-style：边框样式"><a href="#2-7-1-border-style：边框样式" class="headerlink" title="2.7.1 border-style：边框样式"></a>2.7.1 <code>border-style</code>：边框样式</h3><p>ㅤ**<code>border-style</code> 是一个 <code>CSS</code> 简写属性，用来设定元素所有边框的样式。**</p>
+<hr>
+<h3 id="2-7-2-border-width：边框宽度"><a href="#2-7-2-border-width：边框宽度" class="headerlink" title="2.7.2 border-width：边框宽度"></a>2.7.2 <code>border-width</code>：边框宽度</h3><p>ㅤ**<code>border-width</code> 属性可以设置盒子模型的边框宽度。**</p>
+<hr>
+<h3 id="2-7-3-border-color：边框颜色"><a href="#2-7-3-border-color：边框颜色" class="headerlink" title="2.7.3 border-color：边框颜色"></a>2.7.3 <code>border-color</code>：边框颜色</h3><p>ㅤ**<code>CSS</code> 属性 <code>border-color</code> 是一个用于设置元素四个边框颜色的快捷属性： <code>border-top-color</code>, <code>border-right-color</code>, <code>border-bottom-color</code>, <code>border-left-color</code>**</p>
+<hr>
+<h3 id="2-7-4-border-radius：边框半径"><a href="#2-7-4-border-radius：边框半径" class="headerlink" title="2.7.4 border-radius：边框半径"></a>2.7.4 <code>border-radius</code>：边框半径</h3><p>ㅤ**<code>CSS</code> 属性 <code>border-radius</code> 允许你设置元素的外边框圆角。当使用一个半径时确定一个圆形，当使用两个半径时确定一个椭圆。这个(椭)圆与边框的交集形成圆角效果。**</p>
+<hr>
+<h3 id="2-7-5-border-collapse：边框折叠"><a href="#2-7-5-border-collapse：边框折叠" class="headerlink" title="2.7.5 border-collapse：边框折叠"></a>2.7.5 <code>border-collapse</code>：边框折叠</h3><p>ㅤ**<code>border-collapse</code> <code>CSS</code> 属性是用来决定表格的边框是分开的还是合并的。在分隔模式下，相邻的单元格都拥有独立的边框。在合并模式下，相邻单元格共享边框。**</p>
+<hr>
+<h2 id="2-8-元素展示格式"><a href="#2-8-元素展示格式" class="headerlink" title="2.8 元素展示格式"></a>2.8 元素展示格式</h2><h3 id="2-8-1-展示"><a href="#2-8-1-展示" class="headerlink" title="2.8.1 展示"></a>2.8.1 展示</h3><p><strong><code>display</code></strong></p>
+<p><strong>2.8.1.1 <code>block</code>：块元素</strong></p>
+<p>ㅤㅤ●ㅤ<strong>独占一行</strong></p>
+<p>ㅤㅤ●ㅤ**<code>width</code>、<code>height</code>、<code>margin</code>、<code>padding</code> 均可控制**</p>
+<p>ㅤㅤ●ㅤ**<code>width</code> 默认 <code>100%</code>。**</p>
+<p><strong>2.8.1.2. <code>inline</code>：行元素</strong></p>
+<p>ㅤㅤ●ㅤ<strong>可以共占一行</strong></p>
+<p>ㅤㅤ●ㅤ**<code>width</code> 与 <code>height</code> 无效，水平方向的 <code>margin</code> 与 <code>padding</code> 有效，竖直方向的 <code>margin</code> 与 <code>padding</code> 无效**</p>
+<p>ㅤㅤ●ㅤ**<code>width</code> 默认为本身内容宽度**</p>
+<p><strong>2.8.1.3. <code>inline-block</code>：行内块元素</strong></p>
+<p>ㅤㅤ●ㅤ<strong>可以共占一行</strong></p>
+<p>ㅤㅤ●ㅤ**<code>width</code>、<code>height</code>、<code>margin</code>、<code>padding</code> 均可控制**</p>
+<p>ㅤㅤ●ㅤ**<code>width</code> 默认为本身内容宽度**</p>
+<hr>
+<h3 id="2-8-2-white-space：空白"><a href="#2-8-2-white-space：空白" class="headerlink" title="2.8.2 white-space：空白"></a>2.8.2 <code>white-space</code>：空白</h3><p>ㅤㅤ**<code>white-space</code> <code>CSS</code> 属性是用来设置如何处理元素中的 空白 (<code>en-US</code>)。**</p>
+<hr>
+<h3 id="2-8-3-text-overflow：文本溢出"><a href="#2-8-3-text-overflow：文本溢出" class="headerlink" title="2.8.3 text-overflow：文本溢出"></a>2.8.3 <code>text-overflow</code>：文本溢出</h3><p>ㅤㅤ**<code>text-overflow</code> <code>CSS</code> 属性确定如何向用户发出未显示的溢出内容信号。它可以被剪切，显示一个省略号或显示一个自定义字符串。**</p>
+<hr>
+<h3 id="2-8-4-overflow：溢出"><a href="#2-8-4-overflow：溢出" class="headerlink" title="2.8.4 overflow：溢出"></a>2.8.4 <code>overflow</code>：溢出</h3><p>ㅤㅤ**<code>CSS</code> 属性 <code>overflow</code> 定义当一个元素的内容太大而无法适应 块级格式化上下文 时候该做什么。它是 <code>overflow-x</code> 和 <code>overflow-y</code> 的简写属性 。**</p>
+<hr>
+<h2 id="2-9-内边距与外边距"><a href="#2-9-内边距与外边距" class="headerlink" title="2.9 内边距与外边距"></a>2.9 内边距与外边距</h2><h3 id="2-9-1-margin：外边距"><a href="#2-9-1-margin：外边距" class="headerlink" title="2.9.1 margin：外边距"></a>2.9.1 <code>margin</code>：外边距</h3><p><strong><code>margin</code> 属性为给定元素设置所有四个（上下左右）方向的外边距属性。</strong></p>
+<p><strong>1. 可以接受1 ~ 4个值（上、右、下、左的顺序）</strong></p>
+<p><strong>2. 可以分别指明四个方向：<code>margin-top</code>、<code>margin-right</code>、<code>margin-bottom</code>、<code>margin-left</code></strong></p>
+<p><strong>3. 可取值</strong></p>
+<p>ㅤㅤ●ㅤ<strong>3.1 <code>length</code>：固定值</strong></p>
+<p>ㅤㅤ●ㅤ<strong>3.2 <code>percentage</code>：相对于包含块的宽度，以百分比值为外边距。</strong></p>
+<p>ㅤㅤ●ㅤ<strong>3.3 <code>auto</code>：让浏览器自己选择一个合适的外边距。有时，在一些特殊情况下，该值可以使元素居中。</strong></p>
+<p><strong>4. 外边距重叠</strong></p>
+<p>ㅤㅤ●ㅤ<strong>4.1 块的上外边距(<code>margin-top</code>)和下外边距(<code>margin-bottom</code>)有时合并(折叠)为单个边距，其大小为单个边距的最大值(或如果它们相等，则仅为其中一个)，这种行为称为边距折叠。</strong></p>
+<p>ㅤㅤ●ㅤ<strong>4.2 父元素与后代元素：父元素没有上边框和 <code>padding</code> 时，后代元素的 <code>margin-top</code> 会溢出，溢出后父元素的 <code>margin-top</code> 会与后代元素取最大值。</strong></p>
+<hr>
+<h3 id="2-9-2-padding：内边距"><a href="#2-9-2-padding：内边距" class="headerlink" title="2.9.2 padding：内边距"></a>2.9.2 <code>padding</code>：内边距</h3><p><strong><code>padding</code> <code>CSS</code> 简写属性控制元素所有四条边的内边距区域。</strong></p>
+<p><strong>1. 可以接受1 ~ 4个值（上、右、下、左的顺序）</strong></p>
+<p><strong>2. 可以分别指明四个方向：<code>padding-top</code>、<code>padding-right</code>、<code>padding-bottom</code>、<code>padding-left</code></strong></p>
+<p><strong>3. 可取值</strong></p>
+<p>ㅤㅤ●ㅤ<strong>3.1 <code>length</code>：固定值</strong></p>
+<p>ㅤㅤ●ㅤ<strong>3.2 <code>percentage</code>：相对于包含块的宽度，以百分比值为内边距。</strong></p>
+<hr>
+<h2 id="2-10-盒子模型"><a href="#2-10-盒子模型" class="headerlink" title="2.10 盒子模型"></a>2.10 盒子模型</h2><h3 id="2-10-1-box-sizing：盒子尺寸"><a href="#2-10-1-box-sizing：盒子尺寸" class="headerlink" title="2.10.1 box-sizing：盒子尺寸"></a>2.10.1 <code>box-sizing</code>：盒子尺寸</h3><p><strong><code>CSS</code> 中的 <code>box-sizing</code> 属性定义了 <code>user agent</code> 应该如何计算一个元素的总宽度和总高度。</strong></p>
+<p>ㅤㅤ●ㅤ**<code>content-box</code>：是默认值，设置 <code>border</code> 和 <code>padding</code> 均会增加元素的宽高。**</p>
+<p>ㅤㅤ●ㅤ**<code>border-box</code>：设置 <code>border</code> 和 <code>padding</code> 不会改变元素的宽高，而是挤占内容区域。**</p>
+<hr>
+<h2 id="2-11-位置"><a href="#2-11-位置" class="headerlink" title="2.11 位置"></a>2.11 位置</h2><h3 id="2-11-1-position：位置"><a href="#2-11-1-position：位置" class="headerlink" title="2.11.1 position：位置"></a>2.11.1 <code>position</code>：位置</h3><p><strong><code>CSS</code> <code>position</code> 属性用于指定一个元素在文档中的定位方式。</strong></p>
+<p><strong>定位类型：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>定位元素（<code>positioned element</code>）是其计算后位置属性为 <code>relative</code>, <code>absolute</code>, <code>fixed</code> 或 <code>sticky</code> 的一个元素（换句话说，除 <code>static</code> 以外的任何东西）。</strong></p>
+<p>ㅤㅤ●ㅤ<strong>相对定位元素（<code>relatively positioned element</code>）是计算后位置属性为 <code>relative</code> 的元素。</strong></p>
+<p>ㅤㅤ●ㅤ<strong>绝对定位元素（<code>absolutely positioned element</code>）是计算后位置属性为 <code>absolute</code> 或 <code>fixed</code> 的元素。</strong></p>
+<p>ㅤㅤ●ㅤ<strong>粘性定位元素（<code>stickily positioned element</code>）是计算后位置属性为 <code>sticky</code> 的元素。</strong></p>
+<p><strong>取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>static</code>：该关键字指定元素使用正常的布局行为，即元素在文档常规流中当前的布局位置。此时 <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> 和 <code>z-index</code> 属性无效。**</p>
+<p>ㅤㅤ●ㅤ**<code>relative</code>：该关键字下，元素先放置在未添加定位时的位置，再在不改变页面布局的前提下调整元素位置（因此会在此元素未添加定位时所在位置留下空白）。<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> 等调整元素相对于初始位置的偏移量。**</p>
+<p>ㅤㅤ●ㅤ**<code>absolute</code>：元素会被移出正常文档流，并不为元素预留空间，通过指定元素相对于最近的非 <code>static</code> 定位祖先元素的偏移，来确定元素位置。绝对定位的元素可以设置外边距（<code>margins</code>），且不会与其他边距合并。**</p>
+<p>ㅤㅤ●ㅤ**<code>fixed</code>：元素会被移出正常文档流，并不为元素预留空间，而是通过指定元素相对于屏幕视口（<code>viewport</code>）的位置来指定元素位置。元素的位置在屏幕滚动时不会改变。**</p>
+<p>ㅤㅤ●ㅤ**<code>sticky</code>：元素根据正常文档流进行定位，然后相对它的最近滚动祖先（<code>nearest scrolling ancestor</code>）和 <code>containing block</code> (最近块级祖先 <code>nearest block-level ancestor</code>)，包括table-related元素，基于 <code>top</code>, <code>right</code>, <code>bottom</code>, 和 <code>left</code> 的值进行偏移。偏移值不会影响任何其他元素的位置。**</p>
+<hr>
+<h2 id="2-12-浮动"><a href="#2-12-浮动" class="headerlink" title="2.12 浮动"></a>2.12 浮动</h2><h3 id="2-12-1-float：浮动"><a href="#2-12-1-float：浮动" class="headerlink" title="2.12.1 float：浮动"></a>2.12.1 <code>float</code>：浮动</h3><p>ㅤㅤ**<code>float</code> <code>CSS</code>属性指定一个元素应沿其容器的左侧或右侧放置，允许文本和内联元素环绕它。该元素从网页的正常流动(文档流)中移除，尽管仍然保持部分的流动性（与绝对定位相反）。**</p>
+<p><strong>由于 <code>float</code> 意味着使用块布局，它在某些情况下修改 <code>display</code> 值的计算值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>display</code> 为 <code>inline</code> 或 <code>inline-block</code> 时，使用 <code>float</code> 后会统一变成 <code>block</code>。**</p>
+<p><strong>取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>left</code>：表明元素必须浮动在其所在的块容器左侧的关键字。**</p>
+<p>ㅤㅤ●ㅤ**<code>right</code>：表明元素必须浮动在其所在的块容器右侧的关键字。**</p>
+<hr>
+<h3 id="2-12-2-clear：清除"><a href="#2-12-2-clear：清除" class="headerlink" title="2.12.2 clear：清除"></a>2.12.2 <code>clear</code>：清除</h3><p>ㅤㅤ<strong>有时，你可能想要强制元素移至任何浮动元素下方。比如说，你可能希望某个段落与浮动元素保持相邻的位置，但又希望这个段落从头开始强制独占一行。此时可以使用 <code>clear</code>。</strong></p>
+<p><strong>取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>left</code>：清除左侧浮动。**</p>
+<p>ㅤㅤ●ㅤ**<code>right</code>：清除右侧浮动。**</p>
+<p>ㅤㅤ●ㅤ**<code>both</code>：清除左右两侧浮动**</p>
+<h2 id="2-13-flex布局"><a href="#2-13-flex布局" class="headerlink" title="2.13 flex布局"></a>2.13 flex布局</h2><p><strong><code>flex</code> <code>CSS</code> 简写属性设置了弹性项目如何增大或缩小以适应其弹性容器中可用的空间。</strong></p>
+<h3 id="2-13-1-flex-direction：弹性方向"><a href="#2-13-1-flex-direction：弹性方向" class="headerlink" title="2.13.1 flex-direction：弹性方向"></a>2.13.1 <code>flex-direction</code>：弹性方向</h3><p>ㅤㅤ**<code>CSS</code> <code>flex-direction</code> 属性指定了内部元素是如何在 <code>flex</code> 容器中布局的，定义了主轴的方向(正方向或反方向)。**</p>
+<p><strong>取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>row</code>：<code>flex</code> 容器的主轴被定义为与文本方向相同。 主轴起点和主轴终点与内容方向相同。**</p>
+<p>ㅤㅤ●ㅤ**<code>row-reverse</code>：表现和 <code>row</code> 相同，但是置换了主轴起点和主轴终点。**</p>
+<p>ㅤㅤ●ㅤ**<code>column</code>：<code>flex</code> 容器的主轴和块轴相同。主轴起点与主轴终点和书写模式的前后点相同**</p>
+<p>ㅤㅤ●ㅤ**<code>column-reverse</code>：表现和 <code>column</code> 相同，但是置换了主轴起点和主轴终点**</p>
+<hr>
+<h3 id="2-13-2-flex-wrap：弹性包装"><a href="#2-13-2-flex-wrap：弹性包装" class="headerlink" title="2.13.2 flex-wrap：弹性包装"></a>2.13.2 <code>flex-wrap</code>：弹性包装</h3><p>ㅤㅤ**<code>CSS</code> 的 <code>flex-wrap</code> 属性指定 <code>flex</code> 元素单行显示还是多行显示。如果允许换行，这个属性允许你控制行的堆叠方向。**</p>
+<p><strong>取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>nowrap</code>：默认值。不换行。**</p>
+<p>ㅤㅤ●ㅤ**<code>wrap</code>：换行，第一行在上方。**</p>
+<p>ㅤㅤ●ㅤ**<code>wrap-reverse</code>：换行，第一行在下方。**</p>
+<hr>
+<h3 id="2-13-3-flex-flow：弹性流动"><a href="#2-13-3-flex-flow：弹性流动" class="headerlink" title="2.13.3 flex-flow：弹性流动"></a>2.13.3 <code>flex-flow</code>：弹性流动</h3><p>ㅤㅤ**<code>CSS</code> <code>flex-flow</code> 属性是 <code>flex-direction</code> 和 <code>flex-wrap</code> 的简写。默认值为：<code>row nowrap</code>。**</p>
+<hr>
+<h3 id="2-13-4-justify-content：证明内容"><a href="#2-13-4-justify-content：证明内容" class="headerlink" title="2.13.4 justify-content：证明内容"></a>2.13.4 <code>justify-content</code>：证明内容</h3><p>ㅤㅤ**<code>CSS</code> <code>justify-content</code> 属性定义了浏览器之间，如何分配顺着弹性容器主轴(或者网格行轴) 的元素之间及其周围的空间。**</p>
+<p><strong>取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>flex-start</code>：默认值。左对齐。**</p>
+<p>ㅤㅤ●ㅤ**<code>flex-end</code>：右对齐。**</p>
+<p>ㅤㅤ●ㅤ**<code>space-between</code>：左右两段对齐。**</p>
+<p>ㅤㅤ●ㅤ**<code>space-around</code>：在每行上均匀分配弹性元素。相邻元素间距离相同。每行第一个元素到行首的距离和每行最后一个元素到行尾的距离将会是相邻元素之间距离的一半。**</p>
+<p>ㅤㅤ●ㅤ**<code>space-evenly</code>：<code>flex</code>项都沿着主轴均匀分布在指定的对齐容器中。相邻 <code>flex</code> 项之间的间距，主轴起始位置到第一个 <code>flex</code> 项的间距，主轴结束位置到最后一个 <code>flex</code> 项的间距，都完全一样。**</p>
+<hr>
+<h3 id="2-13-5-align-items：对齐项目"><a href="#2-13-5-align-items：对齐项目" class="headerlink" title="2.13.5 align-items：对齐项目"></a>2.13.5 <code>align-items</code>：对齐项目</h3><p>ㅤㅤ**<code>CSS</code> <code>align-items</code> 属性将所有直接子节点上的 <code>align-self</code> 值设置为一个组。 <code>align-self</code> 属性设置项目在其包含块中在交叉轴方向上的对齐方式。**</p>
+<p><strong>取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>flex-start</code>：元素向主轴起点对齐。**</p>
+<p>ㅤㅤ●ㅤ**<code>flex-end</code>：元素向主轴终点对齐。**</p>
+<p>ㅤㅤ●ㅤ**<code>center</code>：元素在侧轴居中。**</p>
+<p>ㅤㅤ●ㅤ**<code>stretch</code>：弹性元素被在侧轴方向被拉伸到与容器相同的高度或宽度。**</p>
+<hr>
+<h3 id="2-13-6-align-content：对齐内容"><a href="#2-13-6-align-content：对齐内容" class="headerlink" title="2.13.6 align-content：对齐内容"></a>2.13.6 <code>align-content</code>：对齐内容</h3><p>ㅤㅤ**<code>CSS</code> 的 <code>align-content</code> 属性设置了浏览器如何沿着弹性盒子布局的纵轴和网格布局的主轴在内容项之间和周围分配空间。**</p>
+<p><strong>取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>flex-start</code>：所有行从垂直轴起点开始填充。第一行的垂直轴起点边和容器的垂直轴起点边对齐。接下来的每一行紧跟前一行。**</p>
+<p>ㅤㅤ●ㅤ**<code>flex-end</code>：所有行从垂直轴末尾开始填充。最后一行的垂直轴终点和容器的垂直轴终点对齐。同时所有后续行与前一个对齐。**</p>
+<p>ㅤㅤ●ㅤ**<code>center</code>：所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的垂直轴起点边和第一行的距离相等于容器的垂直轴终点边和最后一行的距离。**</p>
+<p>ㅤㅤ●ㅤ**<code>stretch</code>：拉伸所有行来填满剩余空间。剩余空间平均地分配给每一行。**</p>
+<hr>
+<h3 id="2-13-7-order：命令"><a href="#2-13-7-order：命令" class="headerlink" title="2.13.7 order：命令"></a>2.13.7 <code>order</code>：命令</h3><p>ㅤㅤ<strong>定义 <code>flex</code> 项目的顺序，值越小越靠前。</strong></p>
+<hr>
+<h3 id="2-13-8-flex-grow：弹性成长"><a href="#2-13-8-flex-grow：弹性成长" class="headerlink" title="2.13.8 flex-grow：弹性成长"></a>2.13.8 <code>flex-grow</code>：弹性成长</h3><p><strong><code>CSS</code> 属性 <code>flex-grow</code> 设置 <code>flex</code> 项主尺寸的 <code>flex</code> 增长系数。</strong></p>
+<p><strong>负值无效，默认为 <code>0</code>。</strong></p>
+<hr>
+<h3 id="2-13-9-flex-shrink：弹性收缩"><a href="#2-13-9-flex-shrink：弹性收缩" class="headerlink" title="2.13.9 flex-shrink：弹性收缩"></a>2.13.9 <code>flex-shrink</code>：弹性收缩</h3><p>ㅤㅤ**<code>CSS</code> <code>flex-shrink</code> 属性指定了 <code>flex</code> 元素的收缩规则。<code>flex</code> 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 <code>flex-shrink</code> 的值。**</p>
+<p><strong>负值无效，默认为 <code>1</code>。</strong></p>
+<hr>
+<h3 id="2-13-10-flex-basis：弹性基础"><a href="#2-13-10-flex-basis：弹性基础" class="headerlink" title="2.13.10 flex-basis：弹性基础"></a>2.13.10 <code>flex-basis</code>：弹性基础</h3><p><strong><code>CSS</code> 属性 <code>flex-basis</code> 指定了 <code>flex</code> 元素在主轴方向上的初始大小。</strong></p>
+<p><strong>取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>width</code> 值可以是 <code>&lt;length&gt;</code>; 该值也可以是一个相对于其父弹性盒容器主轴尺寸的<code>百分数</code> 。<code>负值</code>是不被允许的。默认为 <code>auto</code>。**</p>
+<hr>
+<h3 id="2-13-11-flex：柔性"><a href="#2-13-11-flex：柔性" class="headerlink" title="2.13.11 flex：柔性"></a>2.13.11 <code>flex</code>：柔性</h3><p><strong><code>flex-grow</code>、<code>flex-shrink</code>、<code>flex-basis</code> 的缩写。</strong></p>
+<p><strong>常用取值：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>auto</code>：<code>flex: 1 1 auto</code>**</p>
+<p>ㅤㅤ●ㅤ**<code>none</code>：<code>flex: 0 0 auto</code>**</p>
+<h2 id="2-14-响应式布局"><a href="#2-14-响应式布局" class="headerlink" title="2.14 响应式布局"></a>2.14 响应式布局</h2><h3 id="2-14-1-media查询"><a href="#2-14-1-media查询" class="headerlink" title="2.14.1 media查询"></a>2.14.1 <code>media</code>查询</h3><p><strong>当屏幕宽度满足特定条件时应用 <code>css</code>。</strong></p>
+<p><strong>例如：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@media(min-width: 768px) &#123;</span><br><span class="line">    .container &#123;</span><br><span class="line">        width: 960px;</span><br><span class="line">        background-color: lightblue;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-14-2-Bootstrap"><a href="#2-14-2-Bootstrap" class="headerlink" title="2.14.2 Bootstrap"></a>2.14.2 <code>Bootstrap</code></h3><p>ㅤㅤ●ㅤ**<a target="_blank" rel="noopener" href="https://v5.bootcss.com/">Bootstrap 点击传送</a>**</p>
+<hr>
+<h2 id="2-15-作业"><a href="#2-15-作业" class="headerlink" title="2.15 作业"></a>2.15 作业</h2><h2 id="homework-1"><a href="#homework-1" class="headerlink" title="homework_1"></a>homework_1</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;small-div&quot;&gt;1&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;big-div&quot;&gt;2&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;3&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;small-div&quot;&gt;4&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;small-div hover-div&quot;&gt;5&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;6&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;7&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;hover-div&quot;&gt;8&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;9&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;10&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>要求：</strong></p>
+<p>ㅤㅤ<strong>1. 所有 <code>div</code> 标签的字体颜色设置为 <code>white</code>，宽度和高度均设置为 <code>300px</code>。</strong></p>
+<p>ㅤㅤ<strong>2. 从前往后数，第奇数个 <code>div</code> 的背景颜色设置为：<code>#0000FF</code>。</strong></p>
+<p>ㅤㅤ<strong>3. 从前往后数，第偶数个 <code>div</code> 的背景颜色设置为：<code>rgba(255, 0, 0, 0.7)</code>。</strong></p>
+<p>ㅤㅤ<strong>4. 所有包含 <code>small-div</code> 类的 <code>div</code> 的宽度和高度均设置为 <code>200px</code>。</strong></p>
+<p>ㅤㅤ<strong>5. <code>id</code> 为 <code>big-div</code> 的 <code>div</code> 的宽度和高度均设置为 <code>400px</code>。</strong></p>
+<p>ㅤㅤ<strong>6. 对于所有包含 <code>hover-div</code> 类的 <code>div</code>，当鼠标悬浮时，背景颜色变成 <code>orange</code>。</strong></p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            div &#123;</span><br><span class="line">                color: white;</span><br><span class="line">                width: 300px;</span><br><span class="line">                height: 300px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(2n + 1) &#123; /* odd */</span><br><span class="line">                background-color: #0000FF;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(2n + 2) &#123; /* even */</span><br><span class="line">                background-color: rgba(255, 0, 0, 0.7);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div.small-div &#123;</span><br><span class="line">                width: 200px;</span><br><span class="line">                height: 200px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            #big-div &#123;</span><br><span class="line">                width: 400px;</span><br><span class="line">                height: 400px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div.hover-div:hover &#123;</span><br><span class="line">                background-color: orange;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class=&quot;small-div&quot;&gt;1&lt;/div&gt;</span><br><span class="line">        &lt;div id=&quot;big-div&quot;&gt;2&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;small-div&quot;&gt;4&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;small-div hover-div&quot;&gt;5&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;6&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;7&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;hover-div&quot;&gt;8&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;9&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;10&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="homework-2"><a href="#homework-2" class="headerlink" title="homework_2"></a>homework_2</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h2&gt;春&lt;/h2&gt;</span><br><span class="line">    &lt;p&gt;盼望着，盼望着，东风来了，春天的脚步近了。&lt;/p&gt;</span><br><span class="line">    &lt;p class=&quot;shadow-p&quot;&gt;一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。&lt;/p&gt;</span><br><span class="line">    &lt;p class=&quot;fantasy-p&quot;&gt;小草偷偷地从土里钻出来，嫩嫩的，绿绿的。园子里，田野里，瞧去，一大片一大片满是的。坐着，躺着，打两个滚，踢几脚球，赛几趟跑，捉几回迷藏。风轻悄悄的，草软绵绵的。&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;桃树、杏树、梨树，你不让我，我不让你，都开满了花赶趟儿。红的像火，粉的像霞，白的像雪。花里带着甜味儿；闭了眼，树上仿佛已经满是桃儿、杏儿、梨儿。花下成千成百的蜜蜂嗡嗡地闹着，大小的蝴蝶飞来飞去。野花遍地是：杂样儿，有名字的，没名字的，散在草丛里，像眼睛，像星星，还眨呀眨的。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;p class=&quot;beautiful-p&quot;&gt;</span><br><span class="line">        “吹面不寒杨柳风”，不错的，像母亲的手抚摸着你。风里带来些新翻的泥土的气息，混着青草味儿，还有各种花的香，都在微微润湿的空气里酝酿。鸟儿将窠巢安在繁花嫩叶当中，高兴起来了，呼朋引伴地卖弄清脆的喉咙，唱出宛转的曲子，与轻风流水应和着。牛背上牧童的短笛，这时候也成天在嘹亮地响。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;p class=&quot;bold-p italic-p&quot;&gt;</span><br><span class="line">        雨是最寻常的，一下就是三两天。可别恼。看，像牛毛，像花针，像细丝，密密地斜织着，人家屋顶上全笼着一层薄烟。树叶子却绿得发亮，小草也青得逼你的眼。傍晚时候，上灯了，一点点黄晕的光，烘托出一片安静而和平的夜。乡下去，小路上，石桥边，有撑起伞慢慢走着的人；还有地里工作的农夫，披着蓑，戴着笠的。他们的草屋，稀稀疏疏的，在雨里静默着。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;p&gt;天上风筝渐渐多了，地上孩子也多了。城里乡下，家家户户，老老小小，他们也赶趟儿似的，一个个都出来了。舒活舒活筋骨，抖擞抖擞精神，各做各的一份事去。“一年之计在于春”，刚起头儿，有的是工夫，有的是希望。&lt;/p&gt;</span><br><span class="line">    &lt;p class=&quot;beautiful-p&quot;&gt;春天像刚落地的娃娃，从头到脚都是新的，他生长着。&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;春天像小姑娘，花枝招展的，笑着，走着。&lt;/p&gt;</span><br><span class="line">    &lt;p class=&quot;shadow-p&quot;&gt;春天像健壮的青年，有铁一般的胳膊和腰脚，他领着我们上前去。&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>要求：</strong></p>
+<p>ㅤㅤ<strong>1. <code>h2</code> 标签的文本居中。</strong></p>
+<p>ㅤㅤ<strong>2. 所有 <code>p</code> 标签的行高设置为 <code>1.5em</code>，字间距设置为 <code>1px</code>，段首缩进设置为 <code>2</code> 倍字体大小。</strong></p>
+<p>ㅤㅤ<strong>3. 为所有包含 <code>beautiful-p</code> 类的标签设置下划线，样式为：<code>underline wavy green</code>。</strong></p>
+<p>ㅤㅤ<strong>4. 为所有包含 <code>shadow-p</code> 类的标签设置字体阴影，样式为：<code>5px 5px 5px grey</code>。</strong></p>
+<p>ㅤㅤ<strong>5. 每个 <code>p</code> 标签的首字母的字体大小更改为 <code>1.2em</code>，字体颜色设置为 <code>red</code>。</strong></p>
+<p>ㅤㅤ<strong>6. 为所有包含 <code>bold-p</code> 类的标签设置字体粗细，权值为 <code>800</code>。</strong></p>
+<p>ㅤㅤ<strong>7. 为所有包含 <code>italic-p</code> 类的标签设置字体斜体。</strong></p>
+<p>ㅤㅤ<strong>8. 为所有包含 <code>fantasy-p</code> 类的标签设置字体为：<code>monospace</code>（等宽字体）。</strong></p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            h2 &#123;</span><br><span class="line">                text-align: center;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            p &#123;</span><br><span class="line">                line-height: 1.5em;</span><br><span class="line">                letter-spacing: 1px;</span><br><span class="line">                text-indent: 2em;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .beautiful-p &#123;</span><br><span class="line">                text-decoration: underline wavy green;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .shadow-p &#123;</span><br><span class="line">                text-shadow: 5px 5px 5px grey;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            p::first-letter &#123;</span><br><span class="line">                font-size: 1.2em;</span><br><span class="line">                color: red;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .bold-p &#123;</span><br><span class="line">                font-weight: 800;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .italic-p &#123;</span><br><span class="line">                font-style: italic;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .fantasy-p &#123;</span><br><span class="line">                font-family: monospace;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h2&gt;春&lt;/h2&gt;</span><br><span class="line">        &lt;p&gt;盼望着，盼望着，东风来了，春天的脚步近了。&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;shadow-p&quot;&gt;一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;fantasy-p&quot;&gt;小草偷偷地从土里钻出来，嫩嫩的，绿绿的。园子里，田野里，瞧去，一大片一大片满是的。坐着，躺着，打两个滚，踢几脚球，赛几趟跑，捉几回迷藏。风轻悄悄的，草软绵绵的。&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;桃树、杏树、梨树，你不让我，我不让你，都开满了花赶趟儿。红的像火，粉的像霞，白的像雪。花里带着甜味儿；闭了眼，树上仿佛已经满是桃儿、杏儿、梨儿。花下成千成百的蜜蜂嗡嗡地闹着，大小的蝴蝶飞来飞去。野花遍地是：杂样儿，有名字的，没名字的，散在草丛里，像眼睛，像星星，还眨呀眨的。</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;beautiful-p&quot;&gt;</span><br><span class="line">            “吹面不寒杨柳风”，不错的，像母亲的手抚摸着你。风里带来些新翻的泥土的气息，混着青草味儿，还有各种花的香，都在微微润湿的空气里酝酿。鸟儿将窠巢安在繁花嫩叶当中，高兴起来了，呼朋引伴地卖弄清脆的喉咙，唱出宛转的曲子，与轻风流水应和着。牛背上牧童的短笛，这时候也成天在嘹亮地响。</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;bold-p italic-p&quot;&gt;</span><br><span class="line">            雨是最寻常的，一下就是三两天。可别恼。看，像牛毛，像花针，像细丝，密密地斜织着，人家屋顶上全笼着一层薄烟。树叶子却绿得发亮，小草也青得逼你的眼。傍晚时候，上灯了，一点点黄晕的光，烘托出一片安静而和平的夜。乡下去，小路上，石桥边，有撑起伞慢慢走着的人；还有地里工作的农夫，披着蓑，戴着笠的。他们的草屋，稀稀疏疏的，在雨里静默着。</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;天上风筝渐渐多了，地上孩子也多了。城里乡下，家家户户，老老小小，他们也赶趟儿似的，一个个都出来了。舒活舒活筋骨，抖擞抖擞精神，各做各的一份事去。“一年之计在于春”，刚起头儿，有的是工夫，有的是希望。&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;beautiful-p&quot;&gt;春天像刚落地的娃娃，从头到脚都是新的，他生长着。&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;春天像小姑娘，花枝招展的，笑着，走着。&lt;/p&gt;</span><br><span class="line">        &lt;p class=&quot;shadow-p&quot;&gt;春天像健壮的青年，有铁一般的胳膊和腰脚，他领着我们上前去。&lt;/p&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="homework-3"><a href="#homework-3" class="headerlink" title="homework_3"></a>homework_3</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>要求：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>1. 所有 <code>div</code> 标签的宽度和高度均设置为 <code>300px</code>，外边距设置为 <code>10px</code>。</strong></p>
+<p>ㅤㅤ●ㅤ<strong>2. 第一个 <code>div</code> 的背景颜色设置为 <code>lightblue</code>。</strong></p>
+<p>ㅤㅤ●ㅤ<strong>3. 第二个 <code>div</code> 的背景图片设置为 <code>url(&#39;/static/images/mountain.jpg&#39;)</code>，背景图片大小设置为<code>100% 100%</code>，背景图片不重复。</strong></p>
+<p>ㅤㅤ●ㅤ<strong>4. 第三个 <code>div</code> 的背景图片设置为 <code>url(&#39;/static/images/mountain.jpg&#39;), url(&#39;/static/images/logo.png&#39;)</code>，背景图片大小设置为 <code>50% 100%, 50% 100%</code>，两张背景图片均不重复，两张背景图片的位置设置为 <code>top left, 150px 0</code>。</strong></p>
+<p>ㅤㅤ●ㅤ<strong>5. 第四个 <code>div</code> 的背景图片设置为 <code>url(&#39;/static/images/mountain.jpg&#39;)</code>，背景图片大小设置为 <code>100% 100%</code>，背景图片不重复，背景图片的位置在视口内固定。</strong></p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            div &#123;</span><br><span class="line">                width: 300px;</span><br><span class="line">                height: 300px;</span><br><span class="line">                margin: 10px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(1) &#123;</span><br><span class="line">                background-color: lightblue;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(2) &#123;</span><br><span class="line">                background-image: url(&#x27;/static/images/mountain.jpg&#x27;);</span><br><span class="line">                background-size: 100% 100%;</span><br><span class="line">                background-repeat: no-repeat;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(3) &#123;</span><br><span class="line">                background-image: url(&#x27;/static/images/mountain.jpg&#x27;), url(&#x27;/static/images/logo.png&#x27;);</span><br><span class="line">                background-size: 50% 100%, 50% 100%;</span><br><span class="line">                background-repeat: no-repeat;</span><br><span class="line">                background-position: top left, 150px 0;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(4) &#123;</span><br><span class="line">                background-image: url(&#x27;/static/images/mountain.jpg&#x27;);</span><br><span class="line">                background-size: 100% 100%;</span><br><span class="line">                background-repeat: no-repeat;</span><br><span class="line">                background-attachment: fixed;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="homework-4"><a href="#homework-4" class="headerlink" title="homework_4"></a>homework_4</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>要求：</strong></p>
+<p><strong>1. 所有 <code>div</code> 标签的宽度和高度均设置为 <code>300px</code>。</strong></p>
+<p><strong>2. 第一个 <code>div</code> 满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>四条边的宽度为 <code>10px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>上右下左四条边的样式依次为：<code>solid dotted inset dashed</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>上下两条边的颜色为 <code>blue</code>，左右两条边的颜色为 <code>red</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>外边框圆角半径为 <code>50%</code>；</strong></p>
+<p><strong>3. 第二个 <code>div</code> 满足:</strong></p>
+<p>ㅤㅤ●ㅤ<strong>四条边的样式为：<code>solid 3px black</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>外边框圆角半径为 <code>10px</code>；</strong></p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            div &#123;</span><br><span class="line">                width: 300px;</span><br><span class="line">                height: 300px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(1) &#123;</span><br><span class="line">                border-width: 10px;</span><br><span class="line">                border-style: solid dotted inset dashed;</span><br><span class="line">                border-color: blue red;</span><br><span class="line">                border-radius: 50%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(2) &#123;</span><br><span class="line">                border: solid 3px black;</span><br><span class="line">                border-radius: 10px;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="homework-5"><a href="#homework-5" class="headerlink" title="homework_5"></a>homework_5</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;inline-block-div&quot;&gt;div-1&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;inline-block-div&quot;&gt;div-2&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;inline-block-div&quot;&gt;div-3&lt;/div&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        &lt;span&gt;span-1&lt;/span&gt;</span><br><span class="line">        &lt;span&gt;span-2&lt;/span&gt;</span><br><span class="line">        &lt;span&gt;span-3&lt;/span&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        &lt;div class=&quot;block-div&quot;&gt;</span><br><span class="line">            123456789101112</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>要求：</strong></p>
+<p><strong>1. 包含 <code>container</code> 类的标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>display</code> 属性为 <code>block</code>；**</p>
+<p>ㅤㅤ●ㅤ<strong>宽度和高度均为 <code>500px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>内边距为 <code>10px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>外边距为 <code>20px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>lightblue</code>；</strong></p>
+<p><strong>2. 包含 <code>inline-block-div</code> 类的标签满足；</strong></p>
+<p>ㅤㅤ●ㅤ**<code>display</code> 属性为 <code>inline-block</code>；**</p>
+<p>ㅤㅤ●ㅤ<strong>宽度和高度均为 <code>100px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>内边距为 <code>10px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>外边距为 <code>10px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>blue</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>字体颜色为 <code>white</code>；</strong></p>
+<p><strong>3. 所有 <code>span</code> 满足：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>display</code> 属性为 <code>inline</code>；**</p>
+<p>ㅤㅤ●ㅤ<strong>左右内边距为 <code>10px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>左右外边距为 <code>20px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>bisque</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>字体颜色为 <code>green</code>；</strong></p>
+<p><strong>4. 包含 <code>block-div</code> 类的标签满足；</strong></p>
+<p>ㅤㅤ●ㅤ**<code>display</code> 属性为 <code>block</code>；**</p>
+<p>ㅤㅤ●ㅤ<strong>宽度和高度均为 <code>100px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>内边距与外边距均为 <code>10px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>blue</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>字体颜色为 <code>white</code>；</strong></p>
+<p>ㅤㅤ●ㅤ**<code>overflow</code> 属性为 <code>hidden</code>；**</p>
+<p>ㅤㅤ●ㅤ**<code>text-overflow</code> 属性为 <code>ellipsis</code>；**</p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            .container &#123;</span><br><span class="line">                display: block;</span><br><span class="line">                width: 500px;</span><br><span class="line">                height: 500px;</span><br><span class="line">                padding: 10px;</span><br><span class="line">                margin: 20px;</span><br><span class="line">                background-color: lightblue;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .inline-block-div &#123;</span><br><span class="line">                display: inline-block;</span><br><span class="line">                width: 100px;</span><br><span class="line">                height: 100px;</span><br><span class="line">                padding: 10px;</span><br><span class="line">                margin: 10px;</span><br><span class="line">                background-color: blue;</span><br><span class="line">                color: white;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            span &#123;</span><br><span class="line">                display: inline;</span><br><span class="line">                padding: 0 10px;</span><br><span class="line">                margin: 0 20px;</span><br><span class="line">                background-color: bisque;</span><br><span class="line">                color: green;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .block-div &#123;</span><br><span class="line">                display: block;</span><br><span class="line">                width: 100px;</span><br><span class="line">                height: 100px;</span><br><span class="line">                padding: 10px;</span><br><span class="line">                margin: 10px;</span><br><span class="line">                background-color: blue;</span><br><span class="line">                color: white;</span><br><span class="line">                overflow: hidden;</span><br><span class="line">                text-overflow: ellipsis;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;inline-block-div&quot;&gt;div-1&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;inline-block-div&quot;&gt;div-2&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;inline-block-div&quot;&gt;div-3&lt;/div&gt;</span><br><span class="line">            &lt;br&gt;</span><br><span class="line">            &lt;span&gt;span-1&lt;/span&gt;</span><br><span class="line">            &lt;span&gt;span-2&lt;/span&gt;</span><br><span class="line">            &lt;span&gt;span-3&lt;/span&gt;</span><br><span class="line">            &lt;br&gt;</span><br><span class="line">            &lt;div class=&quot;block-div&quot;&gt;</span><br><span class="line">                123456789101112</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="homework-6"><a href="#homework-6" class="headerlink" title="homework_6"></a>homework_6</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;文本1&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;文本2&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>要求：</strong></p>
+<p><strong>1. 所有 <code>div</code> 标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>宽度和高度均为 <code>100px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>lightsalmon</code>；</strong></p>
+<p><strong>2. 第一个 <code>div</code> 满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>上右下左外边距依次为：<code>10px 20px 30px 40px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>上右下左内边距依次为：<code>10px 20px 30px 40px</code>；</strong></p>
+<p><strong>3. 第二个 <code>div</code> 在父标签内水平居中，外边距设置为：<code>0 auto</code>。</strong></p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            div &#123;</span><br><span class="line">                width: 100px;</span><br><span class="line">                height: 100px;</span><br><span class="line">                background-color: lightsalmon;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(1) &#123;</span><br><span class="line">                margin: 10px 20px 30px 40px;</span><br><span class="line">                padding: 10px 20px 30px 40px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(2) &#123;</span><br><span class="line">                margin: 0 auto;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div&gt;文本1&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;文本2&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="homework-7"><a href="#homework-7" class="headerlink" title="homework_7"></a>homework_7</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;1&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;2&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>要求：</strong></p>
+<p><strong>1. 所有 <code>div</code> 标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>宽度和高度均为 <code>300px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>内边距与外边距均为 <code>10px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>lightblue</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>边框样式为 <code>solid 10px gray</code>；</strong></p>
+<p><strong>2. 第一个 <code>div</code> 为内容盒子模型。</strong></p>
+<p><strong>3. 第二个 <code>div</code> 为边框盒子模型。</strong></p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            div &#123;</span><br><span class="line">                width: 300px;</span><br><span class="line">                height: 300px;</span><br><span class="line">                padding: 10px;</span><br><span class="line">                margin: 10px;</span><br><span class="line">                background-color: lightblue;</span><br><span class="line">                border: solid 10px gray;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(1) &#123;</span><br><span class="line">                box-sizing: content-box;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(2) &#123;</span><br><span class="line">                box-sizing: border-box;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div&gt;1&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;2&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="homework-8"><a href="#homework-8" class="headerlink" title="homework_8"></a>homework_8</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;1&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;2&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;3&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;4&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;5&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;6&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;7&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;8&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;9&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;10&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>要求：</strong></p>
+<p><strong>1. <code>body</code> 的高度设为 <code>2000px</code>，外边距设为 <code>0</code>。</strong></p>
+<p><strong>2. 所有 <code>div</code> 标签的样式设置为：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>宽度与高度均为 <code>200px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色设置为 <code>lightblue</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>外边距设置为 <code>20px</code>；</strong></p>
+<p><strong>3. 第一个 <code>div</code> 的 <code>position</code> 属性为 <code>static</code>。</strong></p>
+<p><strong>4. 第二个 <code>div</code> 的样式设置为：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>position</code> 的值为 <code>relative</code>；**</p>
+<p>ㅤㅤ●ㅤ**<code>left</code> 的值为 <code>50px</code>；**</p>
+<p>ㅤㅤ●ㅤ**<code>top</code> 的值为 <code>15px</code>；**</p>
+<p><strong>5. 第三个 <code>div</code> 的样式设置为：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>position</code> 的值为 <code>absolute</code>；**</p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>rgba(0, 0, 255, 0.5)</code>；</strong></p>
+<p>ㅤㅤ●ㅤ**<code>left</code>的值为 <code>30px</code>;**</p>
+<p>ㅤㅤ●ㅤ<strong>top的值为 <code>30px</code>；</strong></p>
+<p><strong>6. 第四个 <code>div</code> 的样式设置为：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>position</code> 的值为 <code>fixed</code>；**</p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>rgba(0, 255, 0, 0.5)</code>；</strong></p>
+<p>ㅤㅤ●ㅤ**<code>left</code> 的值为 <code>100px</code>；**</p>
+<p>ㅤㅤ●ㅤ**<code>top</code> 的值为 <code>250px</code>；**</p>
+<p><strong>7. 第十个 <code>div</code> 的样式为：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>position</code> 的值为 <code>sticky</code>；**</p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>rgba(255, 0, 0, 0.5)</code>；</strong></p>
+<p>ㅤㅤ●ㅤ**<code>bottom</code> 的值为 <code>10px</code>；**</p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            body &#123;</span><br><span class="line">                height: 2000px;</span><br><span class="line">                margin: 0;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div &#123;</span><br><span class="line">                width: 200px;</span><br><span class="line">                height: 200px;</span><br><span class="line">                background-color: lightblue;</span><br><span class="line">                margin: 20px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(1) &#123;</span><br><span class="line">                position: static;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(2) &#123;</span><br><span class="line">                position: relative;</span><br><span class="line">                left: 50px;</span><br><span class="line">                top: 15px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(3) &#123;</span><br><span class="line">                position: absolute;</span><br><span class="line">                background-color: rgba(0, 0, 255, 0.5);</span><br><span class="line">                left: 30px;</span><br><span class="line">                top: 30px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(4) &#123;</span><br><span class="line">                position: fixed;</span><br><span class="line">                background-color: rgba(0, 255, 0, 0.5);</span><br><span class="line">                left: 100px;</span><br><span class="line">                top: 250px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            div:nth-child(10) &#123;</span><br><span class="line">                position: sticky;</span><br><span class="line">                background-color: rgba(255, 0, 0, 0.5);</span><br><span class="line">                bottom: 10px;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div&gt;1&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;2&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;3&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;4&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;5&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;6&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;7&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;8&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;9&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;10&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="homework-9"><a href="#homework-9" class="headerlink" title="homework_9"></a>homework_9</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;next-line&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>要求：</strong></p>
+<p><strong>1. 包含 <code>container</code> 类的标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>宽度与高度均为 <code>500px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 1lightblue1；</strong></p>
+<p><strong>2. 包含 <code>item</code> 类的标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>宽度和高度均为 <code>100px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>外边距为 <code>10px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>lightcoral</code>；</strong></p>
+<p>ㅤㅤ●ㅤ**<code>float</code> 属性的值为 <code>left</code>；**</p>
+<p><strong>3. 包含 <code>next-line</code> 类的标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>宽度和高度均为 <code>150px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>rgba(0, 0, 255, 0.5)</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>必须移动到之前的浮动元素的下面（使用 <code>clear</code> 属性）；</strong></p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            .container &#123;</span><br><span class="line">                width: 500px;</span><br><span class="line">                height: 500px;</span><br><span class="line">                background-color: lightblue;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .item &#123;</span><br><span class="line">                width: 100px;</span><br><span class="line">                height: 100px;</span><br><span class="line">                margin: 10px;</span><br><span class="line">                background-color: lightcoral;</span><br><span class="line">                float: left;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .next-line &#123;</span><br><span class="line">                width: 150px;</span><br><span class="line">                height: 150px;</span><br><span class="line">                background-color: rgba(0, 0, 255, 0.5);</span><br><span class="line">                clear: both;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;next-line&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="homework-10"><a href="#homework-10" class="headerlink" title="homework_10"></a>homework_10</h2><p><strong>编写一个完整的HTML页面，标签内容如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div&gt;1&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;2&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;3&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;4&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;5&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;6&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div&gt;1&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;2&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;3&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;4&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;5&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;6&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>要求：</strong></p>
+<p><strong>1. 所有包含 <code>container</code> 类的标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>display</code> 属性为 <code>flex</code>；**</p>
+<p>ㅤㅤ●ㅤ<strong>宽度为 <code>50%</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>高度为 <code>500px</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>lightblue</code>；</strong></p>
+<p>ㅤㅤ●ㅤ<strong>外边距为 <code>10px</code>；</strong></p>
+<p><strong>2. 所有 <code>container</code> 类标签的子标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>宽度与高度均为 <code>120px</code>；</strong></p>
+<p><strong>3. 所有 <code>container</code> 类标签的第奇数个子元素满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为：<code>lightsalmon</code>；</strong></p>
+<p><strong>4. 所有 <code>container</code> 类标签的第偶数个子元素满足：</strong></p>
+<p>ㅤㅤ●ㅤ<strong>背景颜色为 <code>lightgreen</code>；</strong></p>
+<p><strong>5. 第一个 <code>container</code> 类标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>flex-wrap</code> 属性为 <code>wrap</code>；**</p>
+<p>ㅤㅤ●ㅤ**<code>justify-content</code> 属性为 <code>space-between</code>；**</p>
+<p>ㅤㅤ●ㅤ**<code>align-content</code> 属性为 <code>flex-start</code>；**</p>
+<p><strong>6. 第二个 <code>container</code> 类标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>flex-direction</code> 属性为 <code>row-reverse</code>；**</p>
+<p>ㅤㅤ●ㅤ**<code>flex-wrap</code> 属性为 <code>nowrap</code>；**</p>
+<p><strong>7. 第二个 <code>container</code> 类标签的所有第奇数个子标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>flex-grow</code> 属性为 <code>3</code>；**</p>
+<p>ㅤㅤ●ㅤ**<code>flex-shrink</code> 属性为 <code>3</code>；**</p>
+<p><strong>8. 第二个 <code>container</code> 类标签的所有第偶数个子标签满足：</strong></p>
+<p>ㅤㅤ●ㅤ**<code>flex-grow</code> 属性为 <code>1</code>；**</p>
+<p>ㅤㅤ●ㅤ**<code>flex-shrink</code> 属性为 <code>1</code>；**</p>
+<hr>
+<p><strong>作业如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">        &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            .container &#123;</span><br><span class="line">                display: flex;</span><br><span class="line">                width: 50%;</span><br><span class="line">                height: 500px;</span><br><span class="line">                background-color: lightblue;</span><br><span class="line">                margin: 10px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .container &gt; * &#123;</span><br><span class="line">                width: 120px;</span><br><span class="line">                height: 120px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .container &gt; *:nth-child(2n + 1) &#123;</span><br><span class="line">                background-color: lightsalmon;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .container &gt; *:nth-child(2n + 2) &#123;</span><br><span class="line">                background-color: lightgreen;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .container:nth-child(1) &#123;</span><br><span class="line">                flex-wrap: wrap;</span><br><span class="line">                justify-content: space-between;</span><br><span class="line">                align-content: flex-start;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .container:nth-child(2) &#123;</span><br><span class="line">                flex-direction: row-reverse;</span><br><span class="line">                flex-wrap: nowrap;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .container:nth-child(2) &gt; *:nth-child(2n + 1) &#123;</span><br><span class="line">                flex-grow: 3;</span><br><span class="line">                flex-shrink: 3;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .container:nth-child(2) &gt; *:nth-child(2n + 2) &#123;</span><br><span class="line">                flex-grow: 1;</span><br><span class="line">                flex-shrink: 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">            &lt;div&gt;1&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;2&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;3&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;4&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;5&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;6&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">            &lt;div&gt;1&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;2&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;3&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;4&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;5&lt;/div&gt;</span><br><span class="line">            &lt;div&gt;6&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src="https://pic.qqans.com/up/2024-4/2024429840393979.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src="https://pic.qqans.com/up/2024-4/2024429840393979.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">xujiaojiao</div><div class="post-copyright__author_desc">生活明朗，万物可爱</div></div><div class="post-copyright__post__info"><a class="post-copyright__reprint" title="该文章为转载文章，注意版权协议" target="_blank" rel="noopener" href="https://www.xujiaojiao.xyz">转载</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://www.xujiaojiao.xyz')">CSS</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/22/67680d24634a2.jpg" target="_blank"><img class="post-qr-code-img" src="https://www.helloimg.com/i/2024/12/22/67680d24634a2.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://www.helloimg.com/i/2024/12/22/67680d250f28e.jpg" target="_blank"><img class="post-qr-code-img" src="https://www.helloimg.com/i/2024/12/22/67680d250f28e.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://www.xujiaojiao.xyz"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=CSS&amp;url=https://www.xujiaojiao.xyz&amp;pic=https://haowallpaper.com/link/common/file/getCroppingImg/15812107217637696" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">此文章版权归xujiaojiao所有，如有转载，请注明来自原作者</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/css/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>css<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://cdn.desnlee.com/img/blog/ef6cc8d24d.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/12/28/HTML%E5%9F%BA%E7%A1%80%E6%A0%87%E7%AD%BE/"><img class="prev-cover" src="https://tse4-mm.cn.bing.net/th/id/OIP-C.1u2p917cvlyP6SuHcq3t0QHaEc?rs=1&amp;pid=ImgDetMain" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">HTML基础标签</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src="https://pic.qqans.com/up/2024-4/2024429840393979.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-CSS"><span class="toc-number">1.</span> <span class="toc-text">2 CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E6%A0%B7%E5%BC%8F%E5%AE%9A%E4%B9%89%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">2.1 样式定义方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E8%A1%8C%E5%86%85%E6%A0%B7%E5%BC%8F%E8%A1%A8%EF%BC%88inline-style-sheet"><span class="toc-number">1.1.1.</span> <span class="toc-text">2.1.1 行内样式表（inline style sheet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E5%86%85%E9%83%A8%E6%A0%B7%E5%BC%8F%E8%A1%A8%EF%BC%88internal-style-sheet"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.1.2 内部样式表（internal style sheet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F%E8%A1%A8%EF%BC%88external-style-sheet"><span class="toc-number">1.1.3.</span> <span class="toc-text">2.1.3 外部样式表（external style sheet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-%E6%B3%A8%E9%87%8A"><span class="toc-number">1.1.4.</span> <span class="toc-text">2.1.4 注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">2.2 选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E6%A0%87%E7%AD%BE%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.2.1 标签选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-ID%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2.2 ID选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.2.3 类选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.2.4 伪类选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-5-%E6%A0%B7%E5%BC%8F%E6%B8%B2%E6%9F%93%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.2.5 样式渲染优先级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E9%A2%9C%E8%89%B2"><span class="toc-number">1.3.</span> <span class="toc-text">2.3 颜色</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%E9%A2%84%E5%AE%9A%E4%B9%89%E7%9A%84%E9%A2%9C%E8%89%B2%E5%80%BC"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.3.1 预定义的颜色值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-16%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.3.2 16进制表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-RGB%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">1.3.3.</span> <span class="toc-text">2.3.3 RGB表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-4-RGBA%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">1.3.4.</span> <span class="toc-text">2.3.4 RGBA表示法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-5-%E5%8F%96%E8%89%B2%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.5.</span> <span class="toc-text">2.3.5 取色方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%96%87%E6%9C%AC"><span class="toc-number">1.4.</span> <span class="toc-text">2.4 文本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-text-align%EF%BC%9A%E6%96%87%E6%9C%AC%E5%AF%B9%E9%BD%90"><span class="toc-number">1.4.1.</span> <span class="toc-text">2.4.1 text-align：文本对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-line-height%EF%BC%9A%E8%A1%8C%E9%AB%98"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.4.2 line-height：行高</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-3-letter-spacing%EF%BC%9A%E5%AD%97%E7%AC%A6%E9%97%B4%E8%B7%9D"><span class="toc-number">1.4.3.</span> <span class="toc-text">2.4.3 letter-spacing：字符间距</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-4-text-indent%EF%BC%9A%E6%96%87%E6%9C%AC%E7%BC%A9%E8%BF%9B"><span class="toc-number">1.4.4.</span> <span class="toc-text">2.4.4 text-indent：文本缩进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-5-text-decoration%EF%BC%9A%E6%96%87%E6%9C%AC%E8%A3%85%E9%A5%B0"><span class="toc-number">1.4.5.</span> <span class="toc-text">2.4.5 text-decoration：文本装饰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-6-text-shadow%EF%BC%9A%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1"><span class="toc-number">1.4.6.</span> <span class="toc-text">2.4.6 text-shadow：文字阴影</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E5%AD%97%E4%BD%93"><span class="toc-number">1.5.</span> <span class="toc-text">2.5 字体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-font-size%EF%BC%9A%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.5.1.</span> <span class="toc-text">2.5.1 font-size：字体大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-font-style%EF%BC%9A%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.5.2.</span> <span class="toc-text">2.5.2 font-style：字体样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-3-font-weight%EF%BC%9A%E5%AD%97%E4%BD%93%E7%B2%97%E7%BB%86"><span class="toc-number">1.5.3.</span> <span class="toc-text">2.5.3 font-weight：字体粗细</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-4-font-family%EF%BC%9A%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97"><span class="toc-number">1.5.4.</span> <span class="toc-text">2.5.4 font-family：字体系列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E8%83%8C%E6%99%AF"><span class="toc-number">1.6.</span> <span class="toc-text">2.6 背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-background-color%EF%BC%9A%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2"><span class="toc-number">1.6.1.</span> <span class="toc-text">2.6.1 background-color：背景颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-background-image%EF%BC%9A%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87"><span class="toc-number">1.6.2.</span> <span class="toc-text">2.6.2 background-image：背景图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-background-size%EF%BC%9A%E8%83%8C%E6%99%AF%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.6.3.</span> <span class="toc-text">2.6.3 background-size：背景尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-4-background-repeat%EF%BC%9A%E8%83%8C%E6%99%AF%E9%87%8D%E5%A4%8D"><span class="toc-number">1.6.4.</span> <span class="toc-text">2.6.4 background-repeat：背景重复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-5-background-position%EF%BC%9A%E8%83%8C%E6%99%AF%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.6.5.</span> <span class="toc-text">2.6.5 background-position：背景位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-6-background-attachment%EF%BC%9A%E8%83%8C%E6%99%AF%E9%99%84%E4%BB%B6"><span class="toc-number">1.6.6.</span> <span class="toc-text">2.6.6 background-attachment：背景附件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E8%BE%B9%E6%A1%86"><span class="toc-number">1.7.</span> <span class="toc-text">2.7 边框</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-1-border-style%EF%BC%9A%E8%BE%B9%E6%A1%86%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.7.1.</span> <span class="toc-text">2.7.1 border-style：边框样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-2-border-width%EF%BC%9A%E8%BE%B9%E6%A1%86%E5%AE%BD%E5%BA%A6"><span class="toc-number">1.7.2.</span> <span class="toc-text">2.7.2 border-width：边框宽度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-3-border-color%EF%BC%9A%E8%BE%B9%E6%A1%86%E9%A2%9C%E8%89%B2"><span class="toc-number">1.7.3.</span> <span class="toc-text">2.7.3 border-color：边框颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-4-border-radius%EF%BC%9A%E8%BE%B9%E6%A1%86%E5%8D%8A%E5%BE%84"><span class="toc-number">1.7.4.</span> <span class="toc-text">2.7.4 border-radius：边框半径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-5-border-collapse%EF%BC%9A%E8%BE%B9%E6%A1%86%E6%8A%98%E5%8F%A0"><span class="toc-number">1.7.5.</span> <span class="toc-text">2.7.5 border-collapse：边框折叠</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E5%85%83%E7%B4%A0%E5%B1%95%E7%A4%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.8.</span> <span class="toc-text">2.8 元素展示格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-1-%E5%B1%95%E7%A4%BA"><span class="toc-number">1.8.1.</span> <span class="toc-text">2.8.1 展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-2-white-space%EF%BC%9A%E7%A9%BA%E7%99%BD"><span class="toc-number">1.8.2.</span> <span class="toc-text">2.8.2 white-space：空白</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-3-text-overflow%EF%BC%9A%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA"><span class="toc-number">1.8.3.</span> <span class="toc-text">2.8.3 text-overflow：文本溢出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-4-overflow%EF%BC%9A%E6%BA%A2%E5%87%BA"><span class="toc-number">1.8.4.</span> <span class="toc-text">2.8.4 overflow：溢出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E5%86%85%E8%BE%B9%E8%B7%9D%E4%B8%8E%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="toc-number">1.9.</span> <span class="toc-text">2.9 内边距与外边距</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-1-margin%EF%BC%9A%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="toc-number">1.9.1.</span> <span class="toc-text">2.9.1 margin：外边距</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-2-padding%EF%BC%9A%E5%86%85%E8%BE%B9%E8%B7%9D"><span class="toc-number">1.9.2.</span> <span class="toc-text">2.9.2 padding：内边距</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.10.</span> <span class="toc-text">2.10 盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-10-1-box-sizing%EF%BC%9A%E7%9B%92%E5%AD%90%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.10.1.</span> <span class="toc-text">2.10.1 box-sizing：盒子尺寸</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-11-%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.11.</span> <span class="toc-text">2.11 位置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-11-1-position%EF%BC%9A%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.11.1.</span> <span class="toc-text">2.11.1 position：位置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-12-%E6%B5%AE%E5%8A%A8"><span class="toc-number">1.12.</span> <span class="toc-text">2.12 浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-12-1-float%EF%BC%9A%E6%B5%AE%E5%8A%A8"><span class="toc-number">1.12.1.</span> <span class="toc-text">2.12.1 float：浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-12-2-clear%EF%BC%9A%E6%B8%85%E9%99%A4"><span class="toc-number">1.12.2.</span> <span class="toc-text">2.12.2 clear：清除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-13-flex%E5%B8%83%E5%B1%80"><span class="toc-number">1.13.</span> <span class="toc-text">2.13 flex布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-1-flex-direction%EF%BC%9A%E5%BC%B9%E6%80%A7%E6%96%B9%E5%90%91"><span class="toc-number">1.13.1.</span> <span class="toc-text">2.13.1 flex-direction：弹性方向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-2-flex-wrap%EF%BC%9A%E5%BC%B9%E6%80%A7%E5%8C%85%E8%A3%85"><span class="toc-number">1.13.2.</span> <span class="toc-text">2.13.2 flex-wrap：弹性包装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-3-flex-flow%EF%BC%9A%E5%BC%B9%E6%80%A7%E6%B5%81%E5%8A%A8"><span class="toc-number">1.13.3.</span> <span class="toc-text">2.13.3 flex-flow：弹性流动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-4-justify-content%EF%BC%9A%E8%AF%81%E6%98%8E%E5%86%85%E5%AE%B9"><span class="toc-number">1.13.4.</span> <span class="toc-text">2.13.4 justify-content：证明内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-5-align-items%EF%BC%9A%E5%AF%B9%E9%BD%90%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.13.5.</span> <span class="toc-text">2.13.5 align-items：对齐项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-6-align-content%EF%BC%9A%E5%AF%B9%E9%BD%90%E5%86%85%E5%AE%B9"><span class="toc-number">1.13.6.</span> <span class="toc-text">2.13.6 align-content：对齐内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-7-order%EF%BC%9A%E5%91%BD%E4%BB%A4"><span class="toc-number">1.13.7.</span> <span class="toc-text">2.13.7 order：命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-8-flex-grow%EF%BC%9A%E5%BC%B9%E6%80%A7%E6%88%90%E9%95%BF"><span class="toc-number">1.13.8.</span> <span class="toc-text">2.13.8 flex-grow：弹性成长</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-9-flex-shrink%EF%BC%9A%E5%BC%B9%E6%80%A7%E6%94%B6%E7%BC%A9"><span class="toc-number">1.13.9.</span> <span class="toc-text">2.13.9 flex-shrink：弹性收缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-10-flex-basis%EF%BC%9A%E5%BC%B9%E6%80%A7%E5%9F%BA%E7%A1%80"><span class="toc-number">1.13.10.</span> <span class="toc-text">2.13.10 flex-basis：弹性基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-13-11-flex%EF%BC%9A%E6%9F%94%E6%80%A7"><span class="toc-number">1.13.11.</span> <span class="toc-text">2.13.11 flex：柔性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-14-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80"><span class="toc-number">1.14.</span> <span class="toc-text">2.14 响应式布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-14-1-media%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.14.1.</span> <span class="toc-text">2.14.1 media查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-14-2-Bootstrap"><span class="toc-number">1.14.2.</span> <span class="toc-text">2.14.2 Bootstrap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-15-%E4%BD%9C%E4%B8%9A"><span class="toc-number">1.15.</span> <span class="toc-text">2.15 作业</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-1"><span class="toc-number">1.16.</span> <span class="toc-text">homework_1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-2"><span class="toc-number">1.17.</span> <span class="toc-text">homework_2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-3"><span class="toc-number">1.18.</span> <span class="toc-text">homework_3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-4"><span class="toc-number">1.19.</span> <span class="toc-text">homework_4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-5"><span class="toc-number">1.20.</span> <span class="toc-text">homework_5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-6"><span class="toc-number">1.21.</span> <span class="toc-text">homework_6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-7"><span class="toc-number">1.22.</span> <span class="toc-text">homework_7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-8"><span class="toc-number">1.23.</span> <span class="toc-text">homework_8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-9"><span class="toc-number">1.24.</span> <span class="toc-text">homework_9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#homework-10"><span class="toc-number">1.25.</span> <span class="toc-text">homework_10</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/12/30/CSS/" title="CSS"><img src="https://cdn.desnlee.com/img/blog/ef6cc8d24d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS"/></a><div class="content"><a class="title" href="/2024/12/30/CSS/" title="CSS">CSS</a><time datetime="2024-12-30T05:45:44.000Z" title="发表于 2024-12-30 13:45:44">2024-12-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/28/HTML%E5%9F%BA%E7%A1%80%E6%A0%87%E7%AD%BE/" title="HTML基础标签"><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.1u2p917cvlyP6SuHcq3t0QHaEc?rs=1&amp;pid=ImgDetMain" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML基础标签"/></a><div class="content"><a class="title" href="/2024/12/28/HTML%E5%9F%BA%E7%A1%80%E6%A0%87%E7%AD%BE/" title="HTML基础标签">HTML基础标签</a><time datetime="2024-12-28T07:31:03.000Z" title="发表于 2024-12-28 15:31:03">2024-12-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统"><img src="https://haowallpaper.com/link/common/file/getCroppingImg/16040968692813184" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统"/></a><div class="content"><a class="title" href="/2024/12/27/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统">操作系统</a><time datetime="2024-12-27T08:51:27.000Z" title="发表于 2024-12-27 16:51:27">2024-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/26/Thrift-1/" title="Thrift-1"><img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.Fr3NJxHUxk9FO8H1UHEPpgHaEF?rs=1&amp;pid=ImgDetMain" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Thrift-1"/></a><div class="content"><a class="title" href="/2024/12/26/Thrift-1/" title="Thrift-1">Thrift-1</a><time datetime="2024-12-26T12:59:09.000Z" title="发表于 2024-12-26 20:59:09">2024-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/26/Thrift/" title="Thrift"><img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.Fr3NJxHUxk9FO8H1UHEPpgHaEF?rs=1&amp;pid=ImgDetMain" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Thrift"/></a><div class="content"><a class="title" href="/2024/12/26/Thrift/" title="Thrift">Thrift</a><time datetime="2024-12-26T12:51:36.000Z" title="发表于 2024-12-26 20:51:36">2024-12-26</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="workboard"><div id="runtimeTextTip"></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2024 By <a class="footer-bar-link" href="/" title="徐娇娇" target="_blank">徐娇娇</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">17</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">4</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://userxjj.github.io/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.xujiaojiaojiao.cn/" title="xjjapp"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="xjjapp"/><span class="back-menu-item-text">xjjapp</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 互动</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Linux%E5%B8%B8%E7%94%A8%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/" style="font-size: 0.88rem;">Linux常用文件命令<sup>1</sup></a><a href="/tags/SSH%E5%92%8CSCP/" style="font-size: 0.88rem;">SSH和SCP<sup>1</sup></a><a href="/tags/css/" style="font-size: 0.88rem;">css<sup>1</sup></a><a href="/tags/git/" style="font-size: 0.88rem;">git<sup>1</sup></a><a href="/tags/heapSort/" style="font-size: 0.88rem;">heapSort<sup>1</sup></a><a href="/tags/html/" style="font-size: 0.88rem;">html<sup>1</sup></a><a href="/tags/mergeSort/" style="font-size: 0.88rem;">mergeSort<sup>1</sup></a><a href="/tags/quickSort/" style="font-size: 0.88rem;">quickSort<sup>1</sup></a><a href="/tags/shell/" style="font-size: 0.88rem;">shell<sup>1</sup></a><a href="/tags/shellSort/" style="font-size: 0.88rem;">shellSort<sup>1</sup></a><a href="/tags/thrift/" style="font-size: 0.88rem;">thrift<sup>1</sup></a><a href="/tags/thrift-1/" style="font-size: 0.88rem;">thrift-1<sup>1</sup></a><a href="/tags/vim%E5%92%8Ctmux/" style="font-size: 0.88rem;">vim和tmux<sup>1</sup></a><a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 0.88rem;">嵌入式<sup>1</sup></a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.88rem;">操作系统<sup>1</sup></a><a href="/tags/%E7%AE%A1%E9%81%93%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 0.88rem;">管道、环境变量及其常用命令<sup>1</sup></a><a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 0.88rem;">设计模式<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("12/17/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎来到我的博客!`,
+    `生活明朗, 万物可爱`,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By xujiaojiao V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 小饺子 %c 你正在访问 徐娇娇 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("12/17/2024 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "";
+        img.title = "明天继续加油~~";
+        img.alt = "明天继续加油~~";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '7MMzG8yyatpji22LNGIM2pGm-gzGzoHsz',
+      appKey: 'k1XOcKls9zTSRdizdkIxUeyb',
+      avatar: 'monsterid',
+      serverURLs: 'https://7mmzg8yy.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.cbd.int/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="分类"></div><script src="https://cdn.cbd.int/blueimp-md5@2.19.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = '?d=monsterid'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://7mmzg8yy.lc-cn-n1-shared.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": '7MMzG8yyatpji22LNGIM2pGm-gzGzoHsz',
+        "X-LC-Key": 'k1XOcKls9zTSRdizdkIxUeyb',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
